@@ -1,3 +1,4 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Hero from './sections/Hero';
 import About from './sections/About';
 import Discover from './sections/Discover';
@@ -5,8 +6,9 @@ import Facilities from './sections/Facilities';
 import Nearby from './sections/Nearby';
 import Location from './sections/Location';
 import Footer from './sections/Footer';
+import ThankYou from './pages/ThankYou';
 
-export default function App() {
+function Home() {
   return (
     <main className="min-h-screen pb-4">
       <Hero/>
@@ -17,5 +19,16 @@ export default function App() {
       <Location/>
       <Footer/>
     </main>
+  );
+}
+
+export default function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/thank-you" element={<ThankYou />} />
+      </Routes>
+    </BrowserRouter>
   );
 }

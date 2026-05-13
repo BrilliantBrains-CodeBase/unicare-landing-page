@@ -1,5 +1,6 @@
 import { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 import { Arrow, Phone, Pin } from '../components/icons';
 import { fadeUp, slideLeft, slideRight, stagger, vp } from '../lib/animations';
 
@@ -27,8 +28,9 @@ const listStagger = stagger(0.08, 0.2);
 
 export default function Nearby() {
   const [selected, setSelected] = useState('');
-  const [status, setStatus] = useState('idle'); // idle | loading | success | error
+  const [status, setStatus] = useState('idle'); // idle | loading | error
   const formRef = useRef(null);
+  const navigate = useNavigate();
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -46,9 +48,7 @@ export default function Nearby() {
         method: 'POST',
         body: JSON.stringify({ name, mobile, specialty: selected, reason, date }),
       });
-      setStatus('success');
-      form.reset();
-      setSelected('');
+      navigate('/thank-you');
     } catch {
       setStatus('error');
     }
@@ -232,11 +232,6 @@ export default function Nearby() {
                 </div>
               </div>
 
-              {status === 'success' && (
-                <div className="rounded-2xl bg-(--teal)/10 border border-(--teal)/30 px-4 py-3.5 text-[13px] text-(--teal) font-medium text-center">
-                  Appointment request received. Our team will contact you shortly to confirm.
-                </div>
-              )}
               {status === 'error' && (
                 <div className="rounded-2xl bg-red-50 border border-red-200 px-4 py-3.5 text-[13px] text-red-600 text-center">
                   Something went wrong. Please try again or call us at +91 9090546363.
@@ -244,7 +239,7 @@ export default function Nearby() {
               )}
 
               <div className="flex items-center justify-end pt-2 border-t border-(--line)">
-                <button type="submit" disabled={status === 'loading' || status === 'success'} className="btn-dark disabled:opacity-60 disabled:cursor-not-allowed">
+                <button type="submit" disabled={status === 'loading'} className="btn-dark disabled:opacity-60 disabled:cursor-not-allowed">
                   <span>{status === 'loading' ? 'Submitting...' : 'Request Appointment'}</span>
                   {status !== 'loading' && <span className="arrow"><Arrow s={12}/></span>}
                 </button>
