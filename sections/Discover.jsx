@@ -88,12 +88,12 @@ export default function Discover() {
                 exit={{ opacity: 0, x: -12 }}
                 transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
               >
-                <div className="grid grid-cols-12 gap-4 items-start">
+                <div className="flex flex-col sm:grid sm:grid-cols-12 gap-4 items-start">
 
                   {/* Initials avatar */}
-                  <div className="col-span-5">
+                  <div className="sm:col-span-5">
                     <div
-                      className="rounded-2xl h-50 sm:h-65 flex flex-col items-center justify-center gap-2 relative overflow-hidden"
+                      className="rounded-2xl h-36 sm:h-50 md:h-65 flex flex-col items-center justify-center gap-2 relative overflow-hidden"
                       style={{ background: doc.color }}
                     >
                       <div className="absolute inset-0" style={{ background: 'radial-gradient(circle at 70% 25%, rgba(255,255,255,0.15), transparent 65%)' }}/>
@@ -103,7 +103,7 @@ export default function Discover() {
                   </div>
 
                   {/* Doctor details */}
-                  <div className="col-span-7 pt-1">
+                  <div className="sm:col-span-7 pt-1">
                     <div
                       className="inline-flex items-center px-2.5 py-1 rounded-full text-[10px] font-semibold tracking-wide mb-2"
                       style={{ background: doc.color + '1A', color: doc.color }}
