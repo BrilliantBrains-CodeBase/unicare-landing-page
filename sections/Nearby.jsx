@@ -12,7 +12,7 @@ const specialties = [
   'Orthopaedics',
   "Maternity & Women's Health",
   'General Surgery',
-  'Diagnostics',
+  'Pharmacy',
 ];
 
 const trustPoints = [
@@ -55,7 +55,7 @@ export default function Nearby() {
   }
 
   return (
-    <section id="notify-form" className="px-4 sm:px-6 py-12 sm:py-16" data-screen-label="05 Appointments">
+    <section id="notify-form" className="px-4 sm:px-6 py-12 sm:py-16 overflow-x-hidden scroll-mt-32 lg:scroll-mt-40" data-screen-label="05 Appointments">
       <div className="max-w-[1320px] mx-auto">
 
         {/* Header */}

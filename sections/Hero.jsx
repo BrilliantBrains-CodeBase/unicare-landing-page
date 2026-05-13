@@ -197,7 +197,7 @@ export default function Hero() {
                   <span>Book an Appointment</span>
                   <span className="arrow"><Arrow s={13}/></span>
                 </button>
-                <button onClick={scrollToForm} className="pill pill-ghost text-white flex items-center gap-2 py-3.5 px-5.5 cursor-pointer text-[15px] sm:text-[16px]">
+                <button onClick={() => scrollTo('our-story')} className="pill pill-ghost text-white flex items-center gap-2 py-3.5 px-5.5 cursor-pointer text-[15px] sm:text-[16px]">
                   <Play s={11}/> Watch our story
                 </button>
               </motion.div>

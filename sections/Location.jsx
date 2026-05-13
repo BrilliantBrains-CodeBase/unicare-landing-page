@@ -14,7 +14,7 @@ const distanceStagger = stagger(0.08, 0.2);
 
 export default function Location() {
   return (
-    <section id="location" className="px-4 sm:px-6 py-12 sm:py-16 relative" data-screen-label="06 Location">
+    <section id="location" className="px-4 sm:px-6 py-12 sm:py-16 relative overflow-x-hidden scroll-mt-32 lg:scroll-mt-40" data-screen-label="06 Location">
       <div className="max-w-330 mx-auto">
 
         {/* Section heading */}

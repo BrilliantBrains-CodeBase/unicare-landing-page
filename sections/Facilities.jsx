@@ -7,7 +7,7 @@ import pediatricImg from '../assets/pediatric.png';
 import orthoImg from '../assets/ortho.png';
 import generalMedImg from '../assets/general-medicine.png';
 import surgeryImg from '../assets/surgery-ot.png';
-import diagnosticsImg from '../assets/diagnostics.png';
+import pharmacyImg from '../assets/pharmacy.png';
 import { fadeUp, stagger, vp } from '../lib/animations';
 
 const facilitiesData = [
@@ -16,7 +16,7 @@ const facilitiesData = [
   { tag: 'Orthopaedics', title: 'Back, knee & joint care\nfor IT professionals', img: orthoImg },
   { tag: 'General Medicine', title: 'Diabetes, BP, thyroid -\nthe family doctor, modernised', img: generalMedImg },
   { tag: 'General Surgery', title: 'Minimally invasive surgery\nwith personal accountability', img: surgeryImg },
-  { tag: 'Diagnostics & Pharmacy', title: 'Scans, packages &\nin-house pharmacy', img: diagnosticsImg },
+  { tag: 'Pharmacy', title: 'In-house pharmacy,\neverything you need on-site', img: pharmacyImg },
 ];
 
 const cardStagger = stagger(0.1, 0.1);
@@ -83,7 +83,7 @@ export default function Facilities() {
   const prevMobile = () => setMobileIdx(i => (i - 1 + facilitiesData.length) % facilitiesData.length);
 
   return (
-    <section id="specialties" className="px-4 sm:px-6 py-6 sm:py-8" data-screen-label="04 Facilities">
+    <section id="specialties" className="px-4 sm:px-6 py-6 sm:py-8 scroll-mt-32 lg:scroll-mt-40" data-screen-label="04 Facilities">
       <div className="max-w-330 mx-auto">
         <div className="rounded-[20px] sm:rounded-[28px] p-5 sm:p-8 md:p-12" style={{ background: 'var(--teal-soft)' }}>
 

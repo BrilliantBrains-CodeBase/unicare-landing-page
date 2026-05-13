@@ -22,7 +22,7 @@ export default function About() {
   const prevArea = () => setAreaIdx(i => (i - 1 + areas.length) % areas.length);
 
   return (
-    <section id="our-story" className="px-4 sm:px-6 py-14 lg:py-28" data-screen-label="02 About">
+    <section id="our-story" className="px-4 sm:px-6 py-14 lg:py-28 scroll-mt-32 lg:scroll-mt-40" data-screen-label="02 About">
       <div className="max-w-330 mx-auto">
 
         {/* Section heading - staggered fade-up */}
@@ -65,7 +65,7 @@ export default function About() {
               </p>
             </div>
             <div className="mt-6 md:mt-8">
-              <button onClick={() => document.getElementById('notify-form')?.scrollIntoView({ behavior: 'smooth' })} className="btn-dark"><span>Learn More</span><span className="arrow"><Arrow s={12}/></span></button>
+              <button onClick={() => document.getElementById('founders')?.scrollIntoView({ behavior: 'smooth' })} className="btn-dark"><span>Learn More</span><span className="arrow"><Arrow s={12}/></span></button>
             </div>
           </motion.div>
 

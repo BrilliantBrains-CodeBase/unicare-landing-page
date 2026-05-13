@@ -65,7 +65,7 @@ export default function Discover() {
   const prevDoc = () => setDocIdx(i => (i - 1 + doctors.length) % doctors.length);
 
   return (
-    <section id="founders" className="px-4 sm:px-6 py-12 border-t border-(--line)" data-screen-label="03 Discover">
+    <section id="founders" className="px-4 sm:px-6 py-12 border-t border-(--line) overflow-x-hidden scroll-mt-32 lg:scroll-mt-40" data-screen-label="03 Discover">
       <div className="max-w-330 mx-auto grid grid-cols-12 gap-8 md:gap-12">
 
         {/* Left - doctor tabs + profile card */}
@@ -108,7 +108,6 @@ export default function Discover() {
                     >
                       <div className="absolute inset-0" style={{ background: 'radial-gradient(circle at 70% 25%, rgba(255,255,255,0.15), transparent 65%)' }}/>
                       <div className="font-display text-[52px] sm:text-[60px] text-white leading-none z-10 tracking-tight">{doc.initials}</div>
-                      <div className="text-[9px] tracking-[0.22em] uppercase text-white/50 z-10 font-medium">Founder Doctor</div>
                     </div>
                   </div>
 
@@ -127,7 +126,7 @@ export default function Discover() {
                     </div>
                     <p className="text-[11px] sm:text-[12px] text-(--muted) leading-relaxed">{doc.bio}</p>
                     <button onClick={() => document.getElementById('notify-form')?.scrollIntoView({ behavior: 'smooth' })} className="btn-dark mt-4 text-[11px] py-2">
-                      <span>Meet the Founders</span>
+                      <span>Book Appointment</span>
                       <span className="arrow w-6 h-6"><Arrow s={10}/></span>
                     </button>
                   </div>
@@ -175,7 +174,7 @@ export default function Discover() {
             <div className="flex-1">
               <div className="font-display text-[28px] leading-none text-(--teal)">*</div>
               <p className="text-[13px] sm:text-[14px] leading-relaxed text-(--muted) mt-2">
-                5 practising doctors - surgery, women's health, endocrinology, and paediatrics - all under one roof in Kokapet.
+                Founded by practising doctors - surgery, women's health, endocrinology, and paediatrics - all under one roof in Kokapet.
               </p>
             </div>
           </div>
