@@ -1,8 +1,8 @@
 import { useRef, useState } from 'react';
-import { motion, useMotionValueEvent, useReducedMotion, useScroll, useTransform } from 'framer-motion';
+import { motion, useMotionTemplate, useMotionValueEvent, useReducedMotion, useScroll, useTransform } from 'framer-motion';
 import { Arrow, Play, Menu } from '../components/icons';
 import Logo from '../components/Logo';
-import heroVideo from '../assets/hero.mp4';
+import heroBg from '../assets/hospital-exterior-main.png';
 import { fadeIn, fadeUp, stagger } from '../lib/animations';
 
 const navLinks = ['Our Story', 'Specialties', 'Founders', 'Location'];
@@ -30,6 +30,7 @@ export default function Hero() {
 
   const shellInset = useTransform(scrollYProgress, [0, 0.55], [16, 0]);
   const shellRadius = useTransform(scrollYProgress, [0, 0.55], [28, 0]);
+  const shellClip = useMotionTemplate`inset(${shellInset}px round ${shellRadius}px)`;
   const foregroundScale = useTransform(scrollYProgress, [0, 0.6], [1, 1.08]);
   const foregroundY = useTransform(scrollYProgress, [0, 0.6], [10, 0]);
   const proofScale = useTransform(scrollYProgress, [0, 0.6], [0.96, 1]);
@@ -42,7 +43,7 @@ export default function Hero() {
 
   const navShellClass = isNavPinned
     ? 'fixed top-0 left-0 right-0 z-[999] px-4 sm:px-6 pt-3 sm:pt-4'
-    : 'absolute left-0 right-0 top-0 z-20 px-4 sm:px-6 pt-4 sm:pt-6';
+    : 'absolute left-0 right-0 top-0 z-20 px-4 sm:px-6 pt-1 sm:pt-2';
 
   const navSurfaceStyle = isNavPinned
     ? {
@@ -83,36 +84,18 @@ export default function Hero() {
   return (
     <section ref={sceneRef} className="relative z-40 h-[210vh] bg-white" data-screen-label="01 Hero">
       <div className="sticky top-0 h-screen overflow-hidden">
-        <motion.div
-          className="h-full"
-          style={
-            prefersReducedMotion
-              ? { padding: 0 }
-              : {
-                  padding: shellInset,
-                }
-          }
-        >
+        <div className="h-full">
           <motion.div
             className="relative h-full overflow-hidden"
-            style={
-              prefersReducedMotion
-                ? { borderRadius: 0 }
-                : {
-                    borderRadius: shellRadius,
-                  }
-            }
+            style={prefersReducedMotion ? {} : { clipPath: shellClip }}
           >
 
-        {/* Background video */}
+        {/* Background image */}
         <div className="absolute inset-0">
-          <video
+          <img
+            src={heroBg}
+            alt=""
             className="absolute inset-0 w-full h-full object-cover ken-burns"
-            src={heroVideo}
-            autoPlay
-            muted
-            loop
-            playsInline
           />
           <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, rgba(1,34,87,.55) 0%, rgba(1,34,87,.10) 40%, rgba(1,34,87,.55) 100%)' }}/>
         </div>
@@ -126,9 +109,9 @@ export default function Hero() {
           animate="visible"
         >
           {/* Desktop pill: logo left · nav links right · CTA */}
-          <div className="hidden lg:flex items-center gap-2 rounded-full px-3 py-2" style={{ background: 'transparent' }}>
+          <div className="hidden lg:flex items-center gap-2 rounded-full px-3 py-0" style={{ background: 'transparent' }}>
             <motion.div variants={fadeIn}>
-              <Logo mono={false} transparent={false} className="h-20 w-auto shrink-0" />
+              <Logo mono={false} transparent={false} className="h-32 w-auto shrink-0" />
             </motion.div>
             <div className="flex-1" />
             <div className="flex items-center gap-0.5">
@@ -146,7 +129,7 @@ export default function Hero() {
               onClick={scrollToForm}
               className={`text-[13px] py-2 pl-4 shrink-0 cursor-pointer rounded-full inline-flex items-center gap-2 ${isNavPinned ? 'bg-(--navy) text-white' : 'btn-dark'}`}
             >
-              <span>Notify Me</span>
+              <span>Book Appointment</span>
               <span
                 className="arrow"
                 style={navArrowStyle}
@@ -158,7 +141,7 @@ export default function Hero() {
 
           {/* Mobile pill: logo left · hamburger right */}
           <div className="lg:hidden flex items-center justify-between rounded-full px-3 py-2" style={{ background: 'transparent' }}>
-            <Logo mono={false} transparent={false} className="h-14 w-auto" />
+            <Logo mono={false} transparent={false} className="h-18 w-auto" />
             <button
               onClick={() => setOpen(o => !o)}
               aria-label={open ? 'Close menu' : 'Open menu'}
@@ -181,7 +164,7 @@ export default function Hero() {
               ))}
               <div className={`my-2 h-px ${isNavPinned ? 'bg-(--line)' : 'bg-white/20'}`} />
               <button onClick={scrollToForm} className={`w-full justify-center cursor-pointer ${isNavPinned ? 'btn-dark' : 'btn-dark'}`}>
-                <span>Notify Me When We Open</span>
+                <span>Book an Appointment</span>
                 <span className="arrow"><Arrow s={12}/></span>
               </button>
             </div>
@@ -198,7 +181,7 @@ export default function Hero() {
             initial={false}
             animate={{}}
           >
-            <span className="dot" style={{ background: '#2CAAA0' }}/> Opening Soon · Kokapet, Hyderabad
+            <span className="dot" style={{ background: '#2CAAA0' }}/> Kokapet, Hyderabad
           </motion.div>
 
           <motion.h1
@@ -214,19 +197,19 @@ export default function Hero() {
             initial={false}
             animate={{}}
           >
-            A new generation of multispecialty hospital, founded by practising doctors. Opening soon in the heart of Kokapet.
+            A new generation of multispecialty hospital, founded by practising doctors. Located in the heart of Kokapet.
           </motion.p>
 
           <motion.div
-            className="mt-6 sm:mt-8 flex items-center flex-wrap gap-3.5"
+            className="mt-6 sm:mt-8 flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-3.5"
             initial={false}
             animate={{}}
           >
             <motion.button onClick={scrollToForm} className="btn-dark text-[15px] sm:text-[16px] py-3.5 pl-5.5 cursor-pointer">
-              <span>Notify Me When We Open</span>
+              <span>Book an Appointment</span>
               <span className="arrow"><Arrow s={13}/></span>
             </motion.button>
-            <motion.button className="pill pill-ghost text-white flex items-center gap-2 py-3.5 px-5.5 cursor-pointer text-[15px] sm:text-[16px]">
+            <motion.button onClick={scrollToForm} className="pill pill-ghost text-white flex items-center gap-2 py-3.5 px-5.5 cursor-pointer text-[15px] sm:text-[16px]">
               <Play s={11}/> Watch our story
             </motion.button>
           </motion.div>
@@ -253,7 +236,7 @@ export default function Hero() {
         </motion.div>
 
           </motion.div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

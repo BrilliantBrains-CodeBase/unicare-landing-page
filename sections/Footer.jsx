@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, Pin, InstaIc, XIc, FbIc } from '../components/icons';
+import { ArrowRight, Pin, InstaIc, XIc, FbIc, LinkedInIc } from '../components/icons';
 import { fadeUp, scaleIn, stagger, vp } from '../lib/animations';
 
 const iconStagger = stagger(0.06, 0.1);
@@ -18,12 +18,11 @@ export default function Footer() {
           viewport={vp}
         >
           <p className="text-[13px] sm:text-[14px] text-(--muted) leading-relaxed">
-            UniCare Hospital - Expert Care, Close to Home. A boutique multispecialty hospital opening soon in Kokapet, Hyderabad. Founded by practising doctors.
+            UniCare Hospital - Expert Care, Close to Home. A boutique multispecialty hospital in Kokapet, Hyderabad. Founded by practising doctors.
           </p>
           <div className="mt-5 sm:mt-6 flex items-center justify-center gap-2 flex-wrap">
             <a href="mailto:hello@unicarehospital.in" className="pill text-[12px] sm:text-[12.5px] inline-flex items-center gap-1.5">hello@unicarehospital.in <ArrowRight s={11}/></a>
             <a href="mailto:corporate@unicarehospital.in" className="pill text-[12px] sm:text-[12.5px] inline-flex items-center gap-1.5">corporate@unicarehospital.in <ArrowRight s={11}/></a>
-            <a href="/privacy" className="pill text-[12px] sm:text-[12.5px] inline-flex items-center gap-1.5">Privacy Policy <ArrowRight s={11}/></a>
           </div>
         </motion.div>
 
@@ -66,9 +65,10 @@ export default function Footer() {
             whileInView="visible"
             viewport={vp}
           >
-            <motion.a variants={scaleIn} href="https://instagram.com/unicarehospital" aria-label="UniCare on Instagram" className="w-9 h-9 rounded-full border border-(--line) flex items-center justify-center text-(--navy)"><InstaIc s={14} c="#012257"/></motion.a>
-            <motion.a variants={scaleIn} href="https://x.com/unicarehospital" aria-label="UniCare on X (Twitter)" className="w-9 h-9 rounded-full border border-(--line) flex items-center justify-center text-(--navy)"><XIc s={13} c="#012257"/></motion.a>
-            <motion.a variants={scaleIn} href="https://facebook.com/unicarehospital" aria-label="UniCare on Facebook" className="w-9 h-9 rounded-full border border-(--line) flex items-center justify-center text-(--navy)"><FbIc s={14} c="#012257"/></motion.a>
+            <motion.a variants={scaleIn} href="https://www.instagram.com/unicarehospital_/" target="_blank" rel="noopener noreferrer" aria-label="UniCare on Instagram" className="w-9 h-9 rounded-full border border-(--line) flex items-center justify-center text-(--navy)"><InstaIc s={14} c="#012257"/></motion.a>
+            <motion.a variants={scaleIn} href="https://x.com/unicarehyd" target="_blank" rel="noopener noreferrer" aria-label="UniCare on X" className="w-9 h-9 rounded-full border border-(--line) flex items-center justify-center text-(--navy)"><XIc s={13} c="#012257"/></motion.a>
+            <motion.a variants={scaleIn} href="https://www.facebook.com/profile.php?id=61589321121365" target="_blank" rel="noopener noreferrer" aria-label="UniCare on Facebook" className="w-9 h-9 rounded-full border border-(--line) flex items-center justify-center text-(--navy)"><FbIc s={14} c="#012257"/></motion.a>
+            <motion.a variants={scaleIn} href="https://linkedin.com/company/unicare-hospital-hyd/" target="_blank" rel="noopener noreferrer" aria-label="UniCare on LinkedIn" className="w-9 h-9 rounded-full border border-(--line) flex items-center justify-center text-(--navy)"><LinkedInIc s={14} c="#012257"/></motion.a>
           </motion.div>
 
           <motion.div

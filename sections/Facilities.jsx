@@ -21,6 +21,8 @@ const facilitiesData = [
 
 const cardStagger = stagger(0.1, 0.1);
 
+const scrollToForm = () => document.getElementById('notify-form')?.scrollIntoView({ behavior: 'smooth' });
+
 function Card({ f }) {
   return (
     <div className="relative rounded-2xl overflow-hidden h-72 sm:h-80 hover-lift w-full shrink-0">
@@ -31,7 +33,7 @@ function Card({ f }) {
       </div>
       <div className="absolute left-4 right-4 bottom-4 flex items-end justify-between gap-3">
         <div className="text-white font-display text-[17px] leading-snug whitespace-pre-line">{f.title}</div>
-        <button aria-label={`View ${f.tag} details`} className="w-9 h-9 rounded-full bg-white text-(--navy) flex items-center justify-center shrink-0 cursor-pointer">
+        <button onClick={scrollToForm} aria-label={`View ${f.tag} details`} className="w-9 h-9 rounded-full bg-white text-(--navy) flex items-center justify-center shrink-0 cursor-pointer">
           <Arrow s={12}/>
         </button>
       </div>

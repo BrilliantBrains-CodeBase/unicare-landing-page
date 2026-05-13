@@ -102,3 +102,13 @@ export const SunMark = ({ s = 16, c = "currentColor" }) => (
     <path d="M17 11 18.5 10"/>
   </svg>
 );
+
+export const LinkedInIc = ({ s = 14, c = "currentColor" }) => (
+  <svg width={s} height={s} viewBox="0 0 24 24" fill="none" stroke={c} strokeWidth="1.7">
+    <rect x="2" y="2" width="20" height="20" rx="4"/>
+    <path d="M7 10v7"/>
+    <path d="M7 7v.01"/>
+    <path d="M11 17v-4a2 2 0 0 1 4 0v4"/>
+    <path d="M11 10v7"/>
+  </svg>
+);

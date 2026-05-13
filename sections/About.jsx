@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Arrow, ArrowLeft, ArrowRight, Pin } from '../components/icons';
 import HospitalPhoto from '../components/HospitalPhoto';
 import exteriorMainImg from '../assets/hospital-exterior-main.png';
+import receptionImg from '../assets/hospital-reception.png';
 import { fadeUp, scaleIn, stagger, vp } from '../lib/animations';
 
 const headingStagger = stagger(0.1, 0);
@@ -64,7 +65,7 @@ export default function About() {
               </p>
             </div>
             <div className="mt-6 md:mt-8">
-              <button className="btn-dark"><span>Learn More</span><span className="arrow"><Arrow s={12}/></span></button>
+              <button onClick={() => document.getElementById('notify-form')?.scrollIntoView({ behavior: 'smooth' })} className="btn-dark"><span>Learn More</span><span className="arrow"><Arrow s={12}/></span></button>
             </div>
           </motion.div>
 
@@ -77,9 +78,9 @@ export default function About() {
             viewport={vp}
           >
             <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden h-65 sm:h-85 md:h-105">
-              <HospitalPhoto src={exteriorMainImg} alt="UniCare Hospital building" />
+              <HospitalPhoto src={receptionImg} alt="UniCare Hospital reception" />
               <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, rgba(1,34,87,.25) 0%, rgba(1,34,87,0) 40%, rgba(1,34,87,.55) 100%)' }}/>
-              <div className="absolute left-4 top-4"><span className="chip">Coming 2026</span></div>
+              <div className="absolute left-4 top-4"><span className="chip">Kokapet, Hyderabad</span></div>
               <div className="absolute right-4 top-4 max-w-50 sm:max-w-70 text-right">
                 <div className="text-white text-[16px] sm:text-[20px] font-display leading-tight">A boutique multispecialty hospital, built for western Hyderabad</div>
               </div>
@@ -87,7 +88,7 @@ export default function About() {
                 <span className="pill text-[12px] inline-flex items-center gap-1.5"><Pin s={12}/> Kokapet, Hyderabad</span>
               </div>
               <div className="absolute right-4 bottom-4">
-                <button aria-label="View hospital details" className="w-10 h-10 rounded-full bg-(--navy) text-white flex items-center justify-center cursor-pointer"><Arrow s={14}/></button>
+                <button onClick={() => document.getElementById('notify-form')?.scrollIntoView({ behavior: 'smooth' })} aria-label="View hospital details" className="w-10 h-10 rounded-full bg-(--navy) text-white flex items-center justify-center cursor-pointer"><Arrow s={14}/></button>
               </div>
             </div>
           </motion.div>

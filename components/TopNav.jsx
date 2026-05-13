@@ -41,7 +41,7 @@ export default function TopNav({ onLight = false }) {
             />
           </div>
           <button onClick={scrollToForm} className="btn-dark">
-            <span>Notify Me</span>
+            <span>Book Appointment</span>
             <span className="arrow"><Arrow s={12}/></span>
           </button>
           <button className={`w-10 h-10 rounded-full flex items-center justify-center ${onLight ? 'bg-white text-(--navy)' : 'bg-(--navy) text-white'}`}>
@@ -80,7 +80,7 @@ export default function TopNav({ onLight = false }) {
             />
           </div>
           <button className="btn-dark mt-1 w-full justify-center">
-            <span>Notify Me</span>
+            <span>Book Appointment</span>
             <span className="arrow"><Arrow s={12}/></span>
           </button>
         </div>

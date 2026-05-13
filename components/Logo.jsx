@@ -1,7 +1,7 @@
 import logoSrc from '../assets/logo.png';
 import logoTransparentSrc from '../assets/logo-transparent.png';
 
-export default function Logo({ mono = false, transparent = false, className = 'h-10 w-auto' }) {
+export default function Logo({ mono = false, transparent = false, className = 'h-12 w-auto' }) {
   const src = transparent ? logoTransparentSrc : logoSrc;
   return (
     <img

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Arrow, ArrowLeft, ArrowRight, Plus, SunMark } from '../components/icons';
 import HospitalPhoto from '../components/HospitalPhoto';
-import exteriorImg from '../assets/hospital-exterior.png';
+import interiorFooterImg from '../assets/hospital-interior-footer.png';
 import { scaleIn, slideLeft, slideRight, vp } from '../lib/animations';
 
 const doctors = [
@@ -45,6 +45,16 @@ const doctors = [
     initials: 'NR',
     color: '#0A3D62',
     bio: 'NICU/PICU specialist trained at JJM Medical College. Managed 4,000+ neonatal cases. Skills: ventilation, resuscitation, developmental & preventive paediatrics.',
+  },
+  {
+    key: 'Dr. Veena',
+    name: 'Dr. Mereddy Veena',
+    role: 'Consultant',
+    specialty: 'Paediatrics & Neonatal Care',
+    quals: ['MBBS', 'MD Paediatrics'],
+    initials: 'MV',
+    color: '#6B3FA0',
+    bio: 'Trained at KIMS Bangalore. Thesis on neonatal airway management in preterm infants. NICU/PICU with BLS & PALS certification.',
   },
 ];
 
@@ -116,7 +126,7 @@ export default function Discover() {
                       ))}
                     </div>
                     <p className="text-[11px] sm:text-[12px] text-(--muted) leading-relaxed">{doc.bio}</p>
-                    <button className="btn-dark mt-4 text-[11px] py-2">
+                    <button onClick={() => document.getElementById('notify-form')?.scrollIntoView({ behavior: 'smooth' })} className="btn-dark mt-4 text-[11px] py-2">
                       <span>Meet the Founders</span>
                       <span className="arrow w-6 h-6"><Arrow s={10}/></span>
                     </button>
@@ -156,16 +166,16 @@ export default function Discover() {
           <div className="mt-8 md:mt-16 flex items-start gap-5 sm:gap-6">
             <motion.div className="relative shrink-0" variants={scaleIn}>
               <div className="w-27.5 h-27.5 sm:w-35 sm:h-35 rounded-2xl overflow-hidden relative">
-                <HospitalPhoto src={exteriorImg} alt="UniCare Hospital" />
+                <HospitalPhoto src={interiorFooterImg} alt="UniCare Hospital interior" />
               </div>
-              <button aria-label="See more about founders" className="absolute -bottom-3 -right-3 w-12 h-12 rounded-full bg-(--navy) text-white flex items-center justify-center cursor-pointer">
+              <button onClick={() => document.getElementById('notify-form')?.scrollIntoView({ behavior: 'smooth' })} aria-label="See more about founders" className="absolute -bottom-3 -right-3 w-12 h-12 rounded-full bg-(--navy) text-white flex items-center justify-center cursor-pointer">
                 <Plus s={18} c="#fff"/>
               </button>
             </motion.div>
             <div className="flex-1">
               <div className="font-display text-[28px] leading-none text-(--teal)">*</div>
               <p className="text-[13px] sm:text-[14px] leading-relaxed text-(--muted) mt-2">
-                Founded by 4 practising doctors - surgery, women's health, endocrinology, and paediatrics - all under one roof in Kokapet.
+                5 practising doctors - surgery, women's health, endocrinology, and paediatrics - all under one roof in Kokapet.
               </p>
             </div>
           </div>

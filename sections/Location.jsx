@@ -91,12 +91,12 @@ export default function Location() {
               </motion.div>
 
               <div className="flex flex-col gap-2.5 pt-6 border-t border-white/10">
-                <button className="w-full bg-white text-(--navy) rounded-2xl px-4 py-3 text-[13px] font-semibold inline-flex items-center justify-center gap-2 cursor-pointer">
-                  <Phone s={13} c="#012257"/> +91 90000 11122
-                </button>
-                <button className="w-full rounded-2xl px-4 py-3 text-[13px] inline-flex items-center justify-center border border-white/20 text-white/80 hover:bg-white/5 transition-colors cursor-pointer">
-                  hello@unicarehospital.in
-                </button>
+                <a href="tel:+919090546363" className="w-full bg-white text-(--navy) rounded-2xl px-4 py-3 text-[13px] font-semibold inline-flex items-center justify-center gap-2 cursor-pointer">
+                  <Phone s={13} c="#012257"/> +91 9090546363
+                </a>
+                <a href="https://www.google.com/maps/place/UniCare+Hospital/@17.4900955,78.3994744,17z/data=!3m1!4b1!4m6!3m5!1s0x3bcb91dc874272cd:0xbc4ad3918afe8fcb!8m2!3d17.4900955!4d78.3994744!16s%2Fg%2F11zb6wm04j?entry=ttu" target="_blank" rel="noopener noreferrer" className="w-full rounded-2xl px-4 py-3 text-[12px] inline-flex items-center justify-center gap-1.5 border border-white/20 text-white/80 hover:bg-white/5 transition-colors text-center leading-snug">
+                  2nd Floor, Saanvi Antalya Homes,<br/>KPHB Phase 1, Kokapet · 500075
+                </a>
               </div>
 
             </div>
@@ -112,7 +112,7 @@ export default function Location() {
           >
             <div className="relative rounded-[20px] sm:rounded-[28px] overflow-hidden min-h-80 sm:min-h-96 lg:min-h-130 h-full" style={{ background: '#E6F4F2' }}>
 
-              <svg viewBox="0 0 800 520" className="absolute inset-0 w-full h-full z-10" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+              <svg viewBox="0 0 800 520" className="absolute inset-0 w-full h-full z-10 pointer-events-none" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
                 <defs>
                   <pattern id="mapGrid" width="40" height="40" patternUnits="userSpaceOnUse">
                     <path d="M40 0H0V40" fill="none" stroke="#012257" strokeOpacity=".05" strokeWidth="1"/>
@@ -163,33 +163,34 @@ export default function Location() {
               </svg>
 
               {/* Popup card */}
-              <div className="absolute" style={{ left: '50%', top: '36%', transform: 'translateX(-50%)' }}>
+              <div className="absolute z-20" style={{ left: '50%', top: '36%', transform: 'translateX(-50%)' }}>
                 <div className="bg-white rounded-2xl pl-2 pr-3 sm:pr-4 py-2 flex items-center gap-2 sm:gap-2.5 shadow-lg whitespace-nowrap">
                   <span className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-(--teal) text-white flex items-center justify-center shrink-0">
                     <Pin s={14} c="#fff"/>
                   </span>
                   <div className="text-left">
                     <div className="text-[11.5px] sm:text-[12.5px] font-semibold text-(--navy)">UniCare Hospital</div>
-                    <div className="text-[9.5px] sm:text-[10.5px] text-(--muted)">Kokapet, Hyderabad · 500075</div>
+                    <div className="text-[9.5px] sm:text-[10.5px] text-(--muted)">2nd Floor, Saanvi Antalya Homes, Kokapet</div>
+                    <div className="text-[9px] sm:text-[9.5px] text-(--muted)/70">Hyderabad, Telangana · 500075</div>
                   </div>
                 </div>
               </div>
 
               {/* Zoom controls */}
-              <div className="absolute top-3 sm:top-4 right-3 sm:right-4 flex flex-col gap-1.5">
+              <div className="absolute z-20 top-3 sm:top-4 right-3 sm:right-4 flex flex-col gap-1.5">
                 <button aria-label="Zoom in" className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-white text-(--navy) flex items-center justify-center shadow-sm text-base font-bold cursor-pointer">+</button>
                 <button aria-label="Zoom out" className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-white text-(--navy) flex items-center justify-center shadow-sm text-base font-bold leading-none cursor-pointer">−</button>
               </div>
 
               {/* Bottom bar */}
-              <div className="absolute left-3 sm:left-4 bottom-3 sm:bottom-4 right-3 sm:right-4 flex items-center justify-between gap-2 sm:gap-3 flex-wrap">
+              <div className="absolute z-20 left-3 sm:left-4 bottom-3 sm:bottom-4 right-3 sm:right-4 flex items-center justify-between gap-2 sm:gap-3 flex-wrap">
                 <span className="pill text-[11px] sm:text-[12px] inline-flex items-center gap-1.5 shadow-sm">
-                  <Pin s={11}/> Kokapet, Hyderabad - 500075
+                  <Pin s={11}/> KPHB Phase 1, Kokapet · 500075
                 </span>
-                <button className="btn-dark text-[11px] sm:text-[12px]">
+                <a href="https://www.google.com/maps/place/UniCare+Hospital/@17.4900955,78.3994744,17z/data=!3m1!4b1!4m6!3m5!1s0x3bcb91dc874272cd:0xbc4ad3918afe8fcb!8m2!3d17.4900955!4d78.3994744!16s%2Fg%2F11zb6wm04j?entry=ttu" target="_blank" rel="noopener noreferrer" className="btn-dark text-[11px] sm:text-[12px]">
                   <span>Get Directions</span>
                   <span className="arrow"><Arrow s={11}/></span>
-                </button>
+                </a>
               </div>
 
             </div>
