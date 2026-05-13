@@ -98,39 +98,61 @@ export default function Discover() {
                 exit={{ opacity: 0, x: -12 }}
                 transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
               >
-                <div className="flex flex-col sm:grid sm:grid-cols-12 gap-4 items-start">
-
-                  {/* Initials avatar */}
-                  <div className="sm:col-span-5">
+                {/* ── Mobile layout (below sm) ── */}
+                <div className="flex flex-col gap-4 sm:hidden">
+                  <div className="flex items-center gap-3.5">
                     <div
-                      className="rounded-2xl h-36 sm:h-50 md:h-65 flex flex-col items-center justify-center gap-2 relative overflow-hidden"
+                      className="w-14 h-14 rounded-2xl flex items-center justify-center shrink-0 relative overflow-hidden"
                       style={{ background: doc.color }}
                     >
                       <div className="absolute inset-0" style={{ background: 'radial-gradient(circle at 70% 25%, rgba(255,255,255,0.15), transparent 65%)' }}/>
-                      <div className="font-display text-[52px] sm:text-[60px] text-white leading-none z-10 tracking-tight">{doc.initials}</div>
+                      <div className="font-display text-[22px] text-white leading-none z-10">{doc.initials}</div>
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <div
+                        className="inline-flex items-center px-2 py-0.5 rounded-full text-[9px] font-semibold tracking-wide mb-1"
+                        style={{ background: doc.color + '1A', color: doc.color }}
+                      >{doc.role}</div>
+                      <div className="font-display text-[15px] leading-tight" style={{ color: 'var(--navy)' }}>{doc.name}</div>
+                      <div className="text-[10.5px] text-(--muted) leading-snug mt-0.5">{doc.specialty}</div>
                     </div>
                   </div>
+                  <p className="text-[12px] text-(--muted) leading-relaxed">{doc.bio}</p>
+                  <button onClick={() => document.getElementById('notify-form')?.scrollIntoView({ behavior: 'smooth' })} className="btn-dark text-[11px] py-2">
+                    <span>Book Appointment</span>
+                    <span className="arrow w-6 h-6"><Arrow s={10}/></span>
+                  </button>
+                </div>
 
-                  {/* Doctor details */}
+                {/* ── Desktop layout (sm and above) ── */}
+                <div className="hidden sm:grid sm:grid-cols-12 gap-4 items-start">
+                  <div className="sm:col-span-5">
+                    <div
+                      className="rounded-2xl sm:aspect-auto sm:h-50 md:h-65 flex flex-col items-center justify-center gap-2 relative overflow-hidden"
+                      style={{ background: doc.color }}
+                    >
+                      <div className="absolute inset-0" style={{ background: 'radial-gradient(circle at 70% 25%, rgba(255,255,255,0.15), transparent 65%)' }}/>
+                      <div className="font-display text-[60px] text-white leading-none z-10 tracking-tight">{doc.initials}</div>
+                    </div>
+                  </div>
                   <div className="sm:col-span-7 pt-1">
                     <div
                       className="inline-flex items-center px-2.5 py-1 rounded-full text-[10px] font-semibold tracking-wide mb-2"
                       style={{ background: doc.color + '1A', color: doc.color }}
                     >{doc.role}</div>
-                    <div className="font-display text-[15px] sm:text-[18px] leading-snug" style={{ color: 'var(--navy)' }}>{doc.name}</div>
+                    <div className="font-display text-[18px] leading-snug" style={{ color: 'var(--navy)' }}>{doc.name}</div>
                     <div className="text-[11px] text-(--muted) mt-0.5 mb-3 leading-snug">{doc.specialty}</div>
                     <div className="flex flex-wrap gap-1.5 mb-3">
                       {doc.quals.map(q => (
                         <span key={q} className="px-2 py-0.5 rounded-full text-[9.5px] font-medium bg-white border border-(--line) text-(--navy)">{q}</span>
                       ))}
                     </div>
-                    <p className="text-[11px] sm:text-[12px] text-(--muted) leading-relaxed">{doc.bio}</p>
+                    <p className="text-[12px] text-(--muted) leading-relaxed">{doc.bio}</p>
                     <button onClick={() => document.getElementById('notify-form')?.scrollIntoView({ behavior: 'smooth' })} className="btn-dark mt-4 text-[11px] py-2">
                       <span>Book Appointment</span>
                       <span className="arrow w-6 h-6"><Arrow s={10}/></span>
                     </button>
                   </div>
-
                 </div>
               </motion.div>
             </AnimatePresence>

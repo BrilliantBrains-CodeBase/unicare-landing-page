@@ -1,6 +1,6 @@
 import { createPortal } from 'react-dom';
 import { useEffect, useRef, useState } from 'react';
-import { motion, useMotionTemplate, useReducedMotion, useScroll, useTransform } from 'framer-motion';
+import { AnimatePresence, motion, useMotionTemplate, useReducedMotion, useScroll, useTransform } from 'framer-motion';
 import { Arrow, Play, Menu } from '../components/icons';
 import Logo from '../components/Logo';
 import heroBg from '../assets/hospital-exterior-main.png';
@@ -70,7 +70,7 @@ export default function Hero() {
   // any CSS stacking contexts created by the hero's clipPath animation.
   const navbar = createPortal(
     <motion.div
-      className="fixed z-9999 px-4 sm:px-6 pt-1 sm:pt-2"
+      className="hidden lg:block fixed z-9999 px-6 pt-2"
       style={prefersReducedMotion
         ? { ...(pinned ? pinnedStyle : glassStyle), top: 0, left: 0, right: 0 }
         : {
@@ -85,8 +85,7 @@ export default function Hero() {
       initial="hidden"
       animate="visible"
     >
-      {/* Desktop */}
-      <div className="hidden lg:flex items-center gap-2 rounded-full px-3 py-0">
+      <div className="flex items-center gap-2 rounded-full px-3 py-0">
         <motion.div variants={fadeIn}>
           <Logo className="h-32 w-auto shrink-0" />
         </motion.div>
@@ -113,45 +112,96 @@ export default function Hero() {
           </span>
         </motion.button>
       </div>
-
-      {/* Mobile bar */}
-      <div className="lg:hidden flex items-center justify-between rounded-full px-3 py-2">
-        <Logo className="h-18 w-auto" />
-        <button
-          onClick={() => setOpen(o => !o)}
-          aria-label={open ? 'Close menu' : 'Open menu'}
-          aria-expanded={open}
-          className="w-9 h-9 rounded-full flex items-center justify-center cursor-pointer"
-          style={{ background: pinned ? 'rgba(1,34,87,0.08)' : 'rgba(255,255,255,0.15)' }}
-        >
-          <Menu s={16} c={pinned ? '#012257' : '#fff'} />
-        </button>
-      </div>
-
-      {/* Mobile drawer */}
-      {open && (
-        <div className="lg:hidden mt-2 rounded-2xl p-4 flex flex-col gap-1" style={pinned ? pinnedStyle : glassStyle}>
-          {navLinks.map(({ label, id }) => (
-            <button
-              key={id}
-              onClick={() => { scrollTo(id); setOpen(false); }}
-              className={`text-left text-[14px] font-medium py-2.5 px-3 rounded-xl transition-colors cursor-pointer ${textCls} ${pinned ? 'hover:bg-(--bg)' : 'hover:bg-white/10'}`}
-            >{label}</button>
-          ))}
-          <div className={`my-2 h-px ${pinned ? 'bg-(--line)' : 'bg-white/20'}`} />
-          <button onClick={scrollToForm} className="w-full justify-center cursor-pointer btn-dark">
-            <span>Book an Appointment</span>
-            <span className="arrow"><Arrow s={12}/></span>
-          </button>
-        </div>
-      )}
     </motion.div>,
     document.body
   );
 
   return (
     <>
-      <section ref={sceneRef} className="relative h-[210vh] bg-white" data-screen-label="01 Hero">
+      {/* ── MOBILE hero (below lg) — no scroll animation ── */}
+      <section className="lg:hidden px-4 pt-4 pb-4 bg-white" data-screen-label="01 Hero">
+        <div className="relative rounded-[24px] overflow-hidden flex flex-col" style={{ minHeight: '88dvh' }}>
+
+          {/* Background */}
+          <img src={heroBg} alt="" className="absolute inset-0 w-full h-full object-cover ken-burns" />
+          <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg,rgba(1,34,87,.55) 0%,rgba(1,34,87,.05) 45%,rgba(1,34,87,.72) 100%)' }} />
+
+          {/* Nav */}
+          <div className="relative z-10 flex items-center justify-between px-4 pt-4">
+            <Logo className="h-16 w-auto" />
+            <button
+              onClick={() => setOpen(o => !o)}
+              aria-label={open ? 'Close menu' : 'Open menu'}
+              aria-expanded={open}
+              className="w-10 h-10 rounded-full flex items-center justify-center cursor-pointer"
+              style={{ background: 'rgba(255,255,255,0.15)' }}
+            >
+              <Menu s={16} c="#fff" />
+            </button>
+          </div>
+
+          {/* Mobile drawer */}
+          <AnimatePresence>
+            {open && (
+              <motion.div
+                initial={{ opacity: 0, y: -8 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -8 }}
+                transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
+                className="absolute top-20 left-3 right-3 z-30 rounded-2xl p-4 flex flex-col gap-1"
+                style={{ background: 'rgba(1,34,87,0.92)', backdropFilter: 'blur(16px)', WebkitBackdropFilter: 'blur(16px)' }}
+              >
+                {navLinks.map(({ label, id }) => (
+                  <button
+                    key={id}
+                    onClick={() => { scrollTo(id); setOpen(false); }}
+                    className="text-left text-[14px] font-medium py-2.5 px-3 rounded-xl text-white/90 hover:bg-white/10 transition-colors cursor-pointer"
+                  >{label}</button>
+                ))}
+                <div className="my-2 h-px bg-white/15" />
+                <button
+                  onClick={() => { scrollToForm(); setOpen(false); }}
+                  className="btn-dark w-full justify-center cursor-pointer"
+                >
+                  <span>Book an Appointment</span>
+                  <span className="arrow"><Arrow s={12} /></span>
+                </button>
+              </motion.div>
+            )}
+          </AnimatePresence>
+
+          {/* Content — pinned to bottom */}
+          <motion.div
+            className="relative z-10 flex-1 flex flex-col justify-end px-5 pb-8"
+            initial={{ opacity: 0, y: 22 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1], delay: 0.15 }}
+          >
+            <div className="chip mb-4 w-fit text-[11px] px-3 py-1.5">
+              <span className="dot" style={{ background: '#2CAAA0' }} /> Kokapet, Hyderabad
+            </div>
+            <h1 className="font-display text-white text-[46px] leading-[1.0] tracking-[-0.03em] mb-4">
+              Expert Care,<br />Close to<br />Home.
+            </h1>
+            <p className="text-white/85 text-[15px] leading-relaxed mb-6 max-w-xs">
+              A new generation of multispecialty hospital, founded by practising doctors.
+            </p>
+            <div className="flex flex-col gap-3">
+              <button onClick={scrollToForm} className="btn-dark text-[15px] py-3.5 pl-5 w-full justify-center cursor-pointer">
+                <span>Book an Appointment</span>
+                <span className="arrow"><Arrow s={13} /></span>
+              </button>
+              <button onClick={() => scrollTo('our-story')} className="pill pill-ghost text-white flex items-center justify-center gap-2 py-3.5 px-5 cursor-pointer text-[15px]">
+                <Play s={11} /> Watch our story
+              </button>
+            </div>
+          </motion.div>
+
+        </div>
+      </section>
+
+      {/* ── DESKTOP hero (lg and above) ── */}
+      <section ref={sceneRef} className="relative h-[210vh] bg-white hidden lg:block" data-screen-label="01 Hero">
         <div className="sticky top-0 h-screen overflow-hidden">
 
           {/* ── Animated shell (hero image + content) ── */}
