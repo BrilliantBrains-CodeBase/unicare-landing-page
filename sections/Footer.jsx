@@ -18,7 +18,7 @@ export default function Footer() {
           viewport={vp}
         >
           <p className="text-[13px] sm:text-[14px] text-(--muted) leading-relaxed">
-            UniCare Hospital — Expert Care, Close to Home. A boutique multispecialty hospital opening soon in Kokapet, Hyderabad. Founded by practising doctors.
+            UniCare Hospital - Expert Care, Close to Home. A boutique multispecialty hospital opening soon in Kokapet, Hyderabad. Founded by practising doctors.
           </p>
           <div className="mt-5 sm:mt-6 flex items-center justify-center gap-2 flex-wrap">
             <a href="mailto:hello@unicarehospital.in" className="pill text-[12px] sm:text-[12.5px] inline-flex items-center gap-1.5">hello@unicarehospital.in <ArrowRight s={11}/></a>
@@ -58,7 +58,7 @@ export default function Footer() {
             <Pin s={14}/> Kokapet, Hyderabad
           </motion.div>
 
-          {/* Social icons — staggered scale-in */}
+          {/* Social icons - staggered scale-in */}
           <motion.div
             className="flex items-center gap-3"
             variants={iconStagger}

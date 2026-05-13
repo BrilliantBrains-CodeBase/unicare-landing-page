@@ -2,6 +2,9 @@ import { useState } from 'react';
 import { Arrow, Search, Menu } from './icons';
 import Logo from './Logo';
 
+const scrollToForm = () =>
+  document.getElementById('notify-form')?.scrollIntoView({ behavior: 'smooth' });
+
 export default function TopNav({ onLight = false }) {
   const [open, setOpen] = useState(false);
   const pillCls = onLight ? 'pill pill-ghost text-white' : 'pill text-(--navy)';
@@ -37,7 +40,7 @@ export default function TopNav({ onLight = false }) {
               style={{ color: onLight ? '#fff' : 'var(--navy)' }}
             />
           </div>
-          <button className="btn-dark">
+          <button onClick={scrollToForm} className="btn-dark">
             <span>Notify Me</span>
             <span className="arrow"><Arrow s={12}/></span>
           </button>

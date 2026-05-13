@@ -7,6 +7,9 @@ import { fadeIn, fadeUp, stagger } from '../lib/animations';
 
 const navLinks = ['Our Story', 'Specialties', 'Founders', 'Location'];
 
+const scrollToForm = () =>
+  document.getElementById('notify-form')?.scrollIntoView({ behavior: 'smooth' });
+
 const glassStyle = {
   background: 'rgba(255,255,255,0.10)',
   backdropFilter: 'blur(14px)',
@@ -140,6 +143,7 @@ export default function Hero() {
             <div className={`w-px h-6 mx-1 shrink-0 ${isNavPinned ? 'bg-(--line)' : 'bg-white/20'}`} />
             <motion.button
               variants={fadeIn}
+              onClick={scrollToForm}
               className={`text-[13px] py-2 pl-4 shrink-0 cursor-pointer rounded-full inline-flex items-center gap-2 ${isNavPinned ? 'bg-(--navy) text-white' : 'btn-dark'}`}
             >
               <span>Notify Me</span>
@@ -176,7 +180,7 @@ export default function Hero() {
                 >{x}</button>
               ))}
               <div className={`my-2 h-px ${isNavPinned ? 'bg-(--line)' : 'bg-white/20'}`} />
-              <button className={`w-full justify-center cursor-pointer ${isNavPinned ? 'btn-dark' : 'btn-dark'}`}>
+              <button onClick={scrollToForm} className={`w-full justify-center cursor-pointer ${isNavPinned ? 'btn-dark' : 'btn-dark'}`}>
                 <span>Notify Me When We Open</span>
                 <span className="arrow"><Arrow s={12}/></span>
               </button>
@@ -218,7 +222,7 @@ export default function Hero() {
             initial={false}
             animate={{}}
           >
-            <motion.button className="btn-dark text-[15px] sm:text-[16px] py-3.5 pl-5.5 cursor-pointer">
+            <motion.button onClick={scrollToForm} className="btn-dark text-[15px] sm:text-[16px] py-3.5 pl-5.5 cursor-pointer">
               <span>Notify Me When We Open</span>
               <span className="arrow"><Arrow s={13}/></span>
             </motion.button>

@@ -1,7 +1,10 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Arrow, ArrowRight, Heart, Pin } from '../components/icons';
 import { fadeUp, slideLeft, slideRight, stagger, vp } from '../lib/animations';
+
+// Paste your deployed Apps Script Web App URL here after deployment
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyda3Ii0IoqRFjYcxZZS-W5vsLmmOOs7ImPgmrGqjxrV9wCThKLtBpJtHBkJH_VMCKOWQ/exec';
 
 const specialties = [
   "Maternity & Women's Health",
@@ -24,9 +27,34 @@ const listStagger = stagger(0.08, 0.15);
 
 export default function Nearby() {
   const [selected, setSelected] = useState('');
+  const [status, setStatus] = useState('idle'); // idle | loading | success | error
+  const formRef = useRef(null);
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+    const form = formRef.current;
+    const name   = form.elements['name'].value.trim();
+    const mobile = form.elements['mobile'].value.trim();
+    const email  = form.elements['email'].value.trim();
+
+    if (!name || !mobile || !email) return;
+
+    setStatus('loading');
+    try {
+      await fetch(SCRIPT_URL, {
+        method: 'POST',
+        body: JSON.stringify({ name, mobile, email, specialty: selected }),
+      });
+      setStatus('success');
+      form.reset();
+      setSelected('');
+    } catch {
+      setStatus('error');
+    }
+  }
 
   return (
-    <section className="px-4 sm:px-6 py-12 sm:py-16" data-screen-label="05 Nearby">
+    <section id="notify-form" className="px-4 sm:px-6 py-12 sm:py-16" data-screen-label="05 Nearby">
       <div className="max-w-[1320px] mx-auto">
 
         {/* Header */}
@@ -54,7 +82,7 @@ export default function Nearby() {
 
         <div className="grid grid-cols-12 gap-5 sm:gap-6 items-stretch">
 
-          {/* Form card — slides from left */}
+          {/* Form card - slides from left */}
           <motion.div
             className="col-span-12 lg:col-span-7"
             variants={slideLeft}
@@ -62,7 +90,7 @@ export default function Nearby() {
             whileInView="visible"
             viewport={vp}
           >
-            <form onSubmit={e => e.preventDefault()} noValidate className="h-full rounded-[20px] sm:rounded-[28px] bg-white border border-(--line) p-5 sm:p-7 md:p-10 flex flex-col gap-6 sm:gap-8">
+            <form ref={formRef} onSubmit={handleSubmit} noValidate className="h-full rounded-[20px] sm:rounded-[28px] bg-white border border-(--line) p-5 sm:p-7 md:p-10 flex flex-col gap-6 sm:gap-8">
 
               <div className="flex items-center gap-3">
                 <span className="w-7 h-7 rounded-full bg-(--teal) text-white text-[11px] font-semibold inline-flex items-center justify-center shrink-0">1</span>
@@ -108,20 +136,31 @@ export default function Nearby() {
                 </div>
               </div>
 
+              {status === 'success' && (
+                <div className="rounded-2xl bg-(--teal)/10 border border-(--teal)/30 px-4 py-3 text-[13px] text-(--teal) font-medium text-center">
+                  You're on the list! We'll be in touch before we open.
+                </div>
+              )}
+              {status === 'error' && (
+                <div className="rounded-2xl bg-red-50 border border-red-200 px-4 py-3 text-[13px] text-red-600 text-center">
+                  Something went wrong. Please try again or call us directly.
+                </div>
+              )}
+
               <div className="flex items-center justify-between flex-wrap gap-3 pt-2 border-t border-(--line)">
                 <p className="text-[12px] text-(--muted) inline-flex items-center gap-1.5">
                   <Heart s={11} c="#2CAAA0"/> No spam. Only founder updates &amp; launch offers.
                 </p>
-                <button type="submit" className="btn-dark">
-                  <span>Reserve My Spot</span>
-                  <span className="arrow"><Arrow s={12}/></span>
+                <button type="submit" disabled={status === 'loading' || status === 'success'} className="btn-dark disabled:opacity-60 disabled:cursor-not-allowed">
+                  <span>{status === 'loading' ? 'Submitting…' : 'Reserve My Spot'}</span>
+                  {status !== 'loading' && <span className="arrow"><Arrow s={12}/></span>}
                 </button>
               </div>
 
             </form>
           </motion.div>
 
-          {/* Benefits card — slides from right */}
+          {/* Benefits card - slides from right */}
           <motion.div
             className="col-span-12 lg:col-span-5"
             variants={slideRight}
@@ -147,7 +186,7 @@ export default function Nearby() {
                 </p>
               </div>
 
-              {/* Benefits list — staggered */}
+              {/* Benefits list - staggered */}
               <motion.ul
                 className="space-y-0 mt-6"
                 variants={listStagger}

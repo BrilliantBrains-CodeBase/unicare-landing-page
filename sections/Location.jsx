@@ -36,13 +36,13 @@ export default function Location() {
             Visit us in Kokapet.
           </motion.h2>
           <motion.p variants={fadeUp} className="text-[14px] sm:text-[15px] text-(--muted) mt-3 leading-relaxed max-w-130 px-2">
-            Serving Narsingi, Financial District, Gachibowli and Manikonda — the best care is never more than a few minutes away.
+            Serving Narsingi, Financial District, Gachibowli and Manikonda - the best care is never more than a few minutes away.
           </motion.p>
         </motion.div>
 
         <div className="grid grid-cols-12 gap-5 sm:gap-6 items-stretch">
 
-          {/* Left info panel — slides from left */}
+          {/* Left info panel - slides from left */}
           <motion.div
             className="col-span-12 lg:col-span-4"
             variants={slideLeft}
@@ -67,7 +67,7 @@ export default function Location() {
                 </h2>
               </div>
 
-              {/* Distance list — staggered */}
+              {/* Distance list - staggered */}
               <motion.div
                 className="flex flex-col mt-6 lg:mt-0"
                 variants={distanceStagger}
@@ -102,7 +102,7 @@ export default function Location() {
             </div>
           </motion.div>
 
-          {/* Map panel — scale in */}
+          {/* Map panel - scale in */}
           <motion.div
             className="col-span-12 lg:col-span-8"
             variants={scaleIn}
@@ -131,7 +131,7 @@ export default function Location() {
                 <path d="M520 40 L800 60 L800 220 L580 240 L500 160 Z"     fill="#D5ECE9" opacity=".6"/>
                 <path d="M180 330 L420 310 L520 420 L300 490 L160 450 Z"   fill="#D5ECE9" opacity=".75"/>
                 <path d="M540 290 q70 -45 150 -8 q60 32 38 95 q-22 63 -115 62 q-92 0 -122 -52 q-28 -52 49 -97 Z" fill="url(#lake)"/>
-                <text x="620" y="382" fontFamily="Georgia, serif" fontSize="12" fill="#012257" opacity=".45" fontStyle="italic">Osman Sagar</text>
+                <text x="620" y="382" fontFamily="Inter, sans-serif" fontSize="12" fill="#012257" opacity=".45" fontStyle="italic">Osman Sagar</text>
                 <path d="M-20 390 Q 200 330 400 370 T 820 310" fill="none" stroke="#fff"    strokeWidth="16" strokeLinecap="round"/>
                 <path d="M-20 390 Q 200 330 400 370 T 820 310" fill="none" stroke="#012257" strokeWidth="2"  strokeDasharray="7 9" opacity=".3"/>
                 <path d="M130 -10 Q 210 205 385 268 T 488 530" fill="none" stroke="#fff"    strokeWidth="12" strokeLinecap="round"/>
@@ -149,6 +149,11 @@ export default function Location() {
                   <rect x="568" y="218" width="120" height="20" rx="10" fill="#fff" opacity=".85"/>
                   <text x="576" y="232" opacity=".7" fontSize="9.5">Gachibowli · 12 min</text>
                 </g>
+                {/* Pulsing ring - anchored at pin tip (390, 289) in SVG space */}
+                <circle cx="390" cy="289" r="14" fill="none" stroke="#2CAAA0" strokeWidth="2">
+                  <animate attributeName="r" values="14;52;52" dur="2.4s" repeatCount="indefinite"/>
+                  <animate attributeName="opacity" values="0.65;0;0" dur="2.4s" repeatCount="indefinite"/>
+                </circle>
                 <circle cx="390" cy="255" r="52" fill="#2CAAA0" opacity=".1"/>
                 <circle cx="390" cy="255" r="34" fill="#2CAAA0" opacity=".18"/>
                 <g transform="translate(390 255)" filter="url(#shadow)">
@@ -156,9 +161,6 @@ export default function Location() {
                   <circle cx="0" cy="-6" r="8" fill="#2CAAA0"/>
                 </g>
               </svg>
-
-              {/* Pin pulse — defined in index.css */}
-              <div className="pin-pulse z-0" style={{ left: '45%', top: '45%' }} aria-hidden="true"/>
 
               {/* Popup card */}
               <div className="absolute" style={{ left: '50%', top: '36%', transform: 'translateX(-50%)' }}>
@@ -182,7 +184,7 @@ export default function Location() {
               {/* Bottom bar */}
               <div className="absolute left-3 sm:left-4 bottom-3 sm:bottom-4 right-3 sm:right-4 flex items-center justify-between gap-2 sm:gap-3 flex-wrap">
                 <span className="pill text-[11px] sm:text-[12px] inline-flex items-center gap-1.5 shadow-sm">
-                  <Pin s={11}/> Kokapet, Hyderabad — 500075
+                  <Pin s={11}/> Kokapet, Hyderabad - 500075
                 </span>
                 <button className="btn-dark text-[11px] sm:text-[12px]">
                   <span>Get Directions</span>

@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 /* ── Focus-visible: keyboard-only ring ── */
 :focus-visible {
@@ -28,11 +29,11 @@
 html, body {
   background: var(--bg);
   color: var(--navy);
-  font-family: 'Open Sans', system-ui, sans-serif;
+  font-family: 'Inter', system-ui, sans-serif;
 }
 
 .font-display {
-  font-family: Georgia, 'Times New Roman', serif;
+  font-family: 'Inter', sans-serif;
   letter-spacing: -0.02em;
   font-weight: 700;
 }

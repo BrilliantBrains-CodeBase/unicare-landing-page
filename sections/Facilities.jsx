@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Arrow, ArrowRight } from '../components/icons';
+import { Arrow, ArrowLeft, ArrowRight } from '../components/icons';
 import HospitalPhoto from '../components/HospitalPhoto';
 import maternityImg from '../assets/maternity.png';
 import pediatricImg from '../assets/pediatric.png';
@@ -12,9 +12,9 @@ import { fadeUp, stagger, vp } from '../lib/animations';
 
 const facilitiesData = [
   { tag: "Maternity & Women's Health", title: "From first scan to a\npremium delivery experience", img: maternityImg },
-  { tag: 'Paediatrics', title: 'Newborn to teenage —\npatient, kind, trusted', img: pediatricImg },
+  { tag: 'Paediatrics', title: 'Newborn to teenage -\npatient, kind, trusted', img: pediatricImg },
   { tag: 'Orthopaedics', title: 'Back, knee & joint care\nfor IT professionals', img: orthoImg },
-  { tag: 'General Medicine', title: 'Diabetes, BP, thyroid —\nthe family doctor, modernised', img: generalMedImg },
+  { tag: 'General Medicine', title: 'Diabetes, BP, thyroid -\nthe family doctor, modernised', img: generalMedImg },
   { tag: 'General Surgery', title: 'Minimally invasive surgery\nwith personal accountability', img: surgeryImg },
   { tag: 'Diagnostics & Pharmacy', title: 'Scans, packages &\nin-house pharmacy', img: diagnosticsImg },
 ];
@@ -43,7 +43,7 @@ function NavControls({ idx, total, onPrev, onNext, onDot }) {
   return (
     <div className="flex items-center gap-3 mt-6">
       <button onClick={onPrev} aria-label="Previous" className="w-10 h-10 rounded-full border border-(--line) bg-white flex items-center justify-center cursor-pointer">
-        <ArrowRight s={13} c="#012257" style={{ transform: 'rotate(180deg)' }}/>
+        <ArrowLeft s={13} c="#012257"/>
       </button>
       <button onClick={onNext} aria-label="Next" className="w-10 h-10 rounded-full bg-(--navy) text-white flex items-center justify-center cursor-pointer">
         <ArrowRight s={13} c="#fff"/>
@@ -99,7 +99,7 @@ export default function Facilities() {
                 Six specialties. One neighbourhood hospital.
               </h2>
             </div>
-            <button className="btn-dark cursor-pointer">
+            <button onClick={() => document.getElementById('notify-form')?.scrollIntoView({ behavior: 'smooth' })} className="btn-dark cursor-pointer">
               <span>Reserve My Spot</span>
               <span className="arrow"><Arrow s={12}/></span>
             </button>
@@ -160,7 +160,7 @@ export default function Facilities() {
                 onDot={setPage}
               />
               <p className="text-[13.5px] leading-relaxed text-(--muted) max-w-105 text-right">
-                Plus 24/7 emergency, ICU, in-house pharmacy, and ambulance services — everything a Kokapet family needs, in one place.
+                Plus 24/7 emergency, ICU, in-house pharmacy, and ambulance services - everything a Kokapet family needs, in one place.
               </p>
             </div>
           </div>
