@@ -69,7 +69,7 @@ export default function ThankYou() {
               <div>
                 <div className="text-[11px] tracking-[0.16em] uppercase font-semibold text-(--muted) mb-1">Our address</div>
                 <div className="text-[13px] font-semibold text-(--navy) leading-snug">2nd Floor, Saanvi Antalya Homes</div>
-                <div className="text-[11.5px] text-(--muted) mt-0.5">KPHB Phase 1, Kokapet, Hyderabad · 500075</div>
+                <div className="text-[11.5px] text-(--muted) mt-0.5">Narsingi, Kokapet, Hyderabad · 500075</div>
               </div>
             </div>
           </motion.div>

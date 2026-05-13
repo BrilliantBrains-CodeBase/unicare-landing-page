@@ -65,7 +65,7 @@ export default function Discover() {
   const prevDoc = () => setDocIdx(i => (i - 1 + doctors.length) % doctors.length);
 
   return (
-    <section className="px-4 sm:px-6 py-12 border-t border-(--line)" data-screen-label="03 Discover">
+    <section id="founders" className="px-4 sm:px-6 py-12 border-t border-(--line)" data-screen-label="03 Discover">
       <div className="max-w-330 mx-auto grid grid-cols-12 gap-8 md:gap-12">
 
         {/* Left - doctor tabs + profile card */}

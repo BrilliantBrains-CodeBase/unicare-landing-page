@@ -22,7 +22,7 @@ export default function About() {
   const prevArea = () => setAreaIdx(i => (i - 1 + areas.length) % areas.length);
 
   return (
-    <section className="px-4 sm:px-6 py-14 lg:py-28" data-screen-label="02 About">
+    <section id="our-story" className="px-4 sm:px-6 py-14 lg:py-28" data-screen-label="02 About">
       <div className="max-w-330 mx-auto">
 
         {/* Section heading - staggered fade-up */}

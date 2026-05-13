@@ -14,7 +14,7 @@ const distanceStagger = stagger(0.08, 0.2);
 
 export default function Location() {
   return (
-    <section className="px-4 sm:px-6 py-12 sm:py-16 relative" data-screen-label="06 Location">
+    <section id="location" className="px-4 sm:px-6 py-12 sm:py-16 relative" data-screen-label="06 Location">
       <div className="max-w-330 mx-auto">
 
         {/* Section heading */}
@@ -94,8 +94,8 @@ export default function Location() {
                 <a href="tel:+919090546363" className="w-full bg-white text-(--navy) rounded-2xl px-4 py-3 text-[13px] font-semibold inline-flex items-center justify-center gap-2 cursor-pointer">
                   <Phone s={13} c="#012257"/> +91 9090546363
                 </a>
-                <a href="https://www.google.com/maps/place/UniCare+Hospital/@17.4900955,78.3994744,17z/data=!3m1!4b1!4m6!3m5!1s0x3bcb91dc874272cd:0xbc4ad3918afe8fcb!8m2!3d17.4900955!4d78.3994744!16s%2Fg%2F11zb6wm04j?entry=ttu" target="_blank" rel="noopener noreferrer" className="w-full rounded-2xl px-4 py-3 text-[12px] inline-flex items-center justify-center gap-1.5 border border-white/20 text-white/80 hover:bg-white/5 transition-colors text-center leading-snug">
-                  2nd Floor, Saanvi Antalya Homes,<br/>KPHB Phase 1, Kokapet · 500075
+                <a href="https://www.google.com/maps/place/Saanvi+Antalya+Homes/data=!4m2!3m1!1s0x0:0x2bd6417591e43792?sa=X&ved=1t:2428&ictx=111" target="_blank" rel="noopener noreferrer" className="w-full rounded-2xl px-4 py-3 text-[12px] inline-flex items-center justify-center gap-1.5 border border-white/20 text-white/80 hover:bg-white/5 transition-colors text-center leading-snug">
+                  2nd Floor, Saanvi Antalya Homes,<br/>Narsingi, Kokapet, Hyderabad · 500075
                 </a>
               </div>
 
@@ -170,8 +170,8 @@ export default function Location() {
                   </span>
                   <div className="text-left">
                     <div className="text-[11.5px] sm:text-[12.5px] font-semibold text-(--navy)">UniCare Hospital</div>
-                    <div className="text-[9.5px] sm:text-[10.5px] text-(--muted)">2nd Floor, Saanvi Antalya Homes, Kokapet</div>
-                    <div className="text-[9px] sm:text-[9.5px] text-(--muted)/70">Hyderabad, Telangana · 500075</div>
+                    <div className="text-[9.5px] sm:text-[10.5px] text-(--muted)">2nd Floor, Saanvi Antalya Homes, Narsingi</div>
+                    <div className="text-[9px] sm:text-[9.5px] text-(--muted)/70">Kokapet, Hyderabad · 500075</div>
                   </div>
                 </div>
               </div>
@@ -185,9 +185,9 @@ export default function Location() {
               {/* Bottom bar */}
               <div className="absolute z-20 left-3 sm:left-4 bottom-3 sm:bottom-4 right-3 sm:right-4 flex items-center justify-between gap-2 sm:gap-3 flex-wrap">
                 <span className="pill text-[11px] sm:text-[12px] inline-flex items-center gap-1.5 shadow-sm">
-                  <Pin s={11}/> KPHB Phase 1, Kokapet · 500075
+                  <Pin s={11}/> Narsingi, Kokapet · 500075
                 </span>
-                <a href="https://www.google.com/maps/place/UniCare+Hospital/@17.4900955,78.3994744,17z/data=!3m1!4b1!4m6!3m5!1s0x3bcb91dc874272cd:0xbc4ad3918afe8fcb!8m2!3d17.4900955!4d78.3994744!16s%2Fg%2F11zb6wm04j?entry=ttu" target="_blank" rel="noopener noreferrer" className="btn-dark text-[11px] sm:text-[12px]">
+                <a href="https://www.google.com/maps/place/Saanvi+Antalya+Homes/data=!4m2!3m1!1s0x0:0x2bd6417591e43792?sa=X&ved=1t:2428&ictx=111" target="_blank" rel="noopener noreferrer" className="btn-dark text-[11px] sm:text-[12px]">
                   <span>Get Directions</span>
                   <span className="arrow"><Arrow s={11}/></span>
                 </a>

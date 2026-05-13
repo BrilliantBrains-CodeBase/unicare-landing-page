@@ -2,8 +2,15 @@ import { useState } from 'react';
 import { Arrow, Search, Menu } from './icons';
 import Logo from './Logo';
 
-const scrollToForm = () =>
-  document.getElementById('notify-form')?.scrollIntoView({ behavior: 'smooth' });
+const navLinks = [
+  { label: 'Our Story',   id: 'our-story'   },
+  { label: 'Specialties', id: 'specialties'  },
+  { label: 'Founders',    id: 'founders'     },
+  { label: 'Location',    id: 'location'     },
+];
+
+const scrollTo = id => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+const scrollToForm = () => scrollTo('notify-form');
 
 export default function TopNav({ onLight = false }) {
   const [open, setOpen] = useState(false);
@@ -15,8 +22,8 @@ export default function TopNav({ onLight = false }) {
 
         {/* Desktop: left nav pills */}
         <div className="hidden lg:flex items-center gap-1.5">
-          {['Our Story', 'Specialties', 'Founders', 'Location'].map(x => (
-            <button key={x} className={pillCls}>{x}</button>
+          {navLinks.map(({ label, id }) => (
+            <button key={id} onClick={() => scrollTo(id)} className={pillCls}>{label}</button>
           ))}
         </div>
 
@@ -64,11 +71,12 @@ export default function TopNav({ onLight = false }) {
       {/* Mobile drawer */}
       {open && (
         <div id="mobile-nav" role="navigation" aria-label="Main navigation" className={`lg:hidden mt-3 rounded-2xl p-4 flex flex-col gap-1 ${onLight ? 'bg-black/40 backdrop-blur-md' : 'bg-white border border-(--line) shadow-lg'}`}>
-          {['Our Story', 'Specialties', 'Founders', 'Location'].map(x => (
+          {navLinks.map(({ label, id }) => (
             <button
-              key={x}
+              key={id}
+              onClick={() => { scrollTo(id); setOpen(false); }}
               className={`text-left text-[14px] font-medium py-2.5 px-3 rounded-xl transition-colors ${onLight ? 'text-white hover:bg-white/10' : 'text-(--navy) hover:bg-(--bg)'}`}
-            >{x}</button>
+            >{label}</button>
           ))}
           <div className={`my-2 h-px ${onLight ? 'bg-white/20' : 'bg-(--line)'}`}/>
           <div className={`flex items-center gap-2 px-3 py-2.5 rounded-xl ${onLight ? 'bg-white/10' : 'bg-(--bg)'}`}>

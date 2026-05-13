@@ -21,8 +21,8 @@ export default function Footer() {
             UniCare Hospital - Expert Care, Close to Home. A boutique multispecialty hospital in Kokapet, Hyderabad. Founded by practising doctors.
           </p>
           <div className="mt-5 sm:mt-6 flex items-center justify-center gap-2 flex-wrap">
-            <a href="mailto:hello@unicarehospital.in" className="pill text-[12px] sm:text-[12.5px] inline-flex items-center gap-1.5">hello@unicarehospital.in <ArrowRight s={11}/></a>
-            <a href="mailto:corporate@unicarehospital.in" className="pill text-[12px] sm:text-[12.5px] inline-flex items-center gap-1.5">corporate@unicarehospital.in <ArrowRight s={11}/></a>
+            <a href="mailto:info@unicareglobalhospitals.com" className="pill text-[12px] sm:text-[12.5px] inline-flex items-center gap-1.5">info@unicareglobalhospitals.com <ArrowRight s={11}/></a>
+            <a href="mailto:helpdesk@unicareglobalhospitals.com" className="pill text-[12px] sm:text-[12.5px] inline-flex items-center gap-1.5">helpdesk@unicareglobalhospitals.com <ArrowRight s={11}/></a>
           </div>
         </motion.div>
 

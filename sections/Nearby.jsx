@@ -121,7 +121,7 @@ export default function Nearby() {
                     <Pin s={15} c="#2CAAA0"/>
                   </span>
                   <div>
-                    <div className="text-[13.5px] font-semibold">Kokapet, Hyderabad</div>
+                    <div className="text-[13.5px] font-semibold">Narsingi, Kokapet, Hyderabad</div>
                     <div className="text-[11px] text-white/50">Modern multi-speciality care, close to home</div>
                   </div>
                 </div>

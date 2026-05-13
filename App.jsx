@@ -10,15 +10,17 @@ import ThankYou from './pages/ThankYou';
 
 function Home() {
   return (
-    <main className="min-h-screen pb-4">
-      <Hero/>
-      <About/>
-      <Discover/>
-      <Facilities/>
-      <Nearby/>
-      <Location/>
-      <Footer/>
-    </main>
+    <>
+      <main className="min-h-screen pb-4">
+        <Hero/>
+        <About/>
+        <Discover/>
+        <Facilities/>
+        <Nearby/>
+        <Location/>
+        <Footer/>
+      </main>
+    </>
   );
 }
 

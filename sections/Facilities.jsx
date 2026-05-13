@@ -83,7 +83,7 @@ export default function Facilities() {
   const prevMobile = () => setMobileIdx(i => (i - 1 + facilitiesData.length) % facilitiesData.length);
 
   return (
-    <section className="px-4 sm:px-6 py-6 sm:py-8" data-screen-label="04 Facilities">
+    <section id="specialties" className="px-4 sm:px-6 py-6 sm:py-8" data-screen-label="04 Facilities">
       <div className="max-w-330 mx-auto">
         <div className="rounded-[20px] sm:rounded-[28px] p-5 sm:p-8 md:p-12" style={{ background: 'var(--teal-soft)' }}>
 
