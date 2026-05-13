@@ -8,8 +8,8 @@ import { fadeIn, fadeUp, stagger } from '../lib/animations';
 
 const navLinks = [
   { label: 'Our Story',   id: 'our-story'   },
-  { label: 'Specialties', id: 'specialties'  },
   { label: 'Founders',    id: 'founders'     },
+  { label: 'Specialties', id: 'specialties'  },
   { label: 'Location',    id: 'location'     },
 ];
 
@@ -189,7 +189,7 @@ export default function Hero() {
                 className="text-white/95 text-[16px] sm:text-[18px] max-w-136 mt-5 sm:mt-7 leading-relaxed"
                 variants={fadeUp} initial="hidden" animate="visible"
               >
-                A new generation of multispecialty hospital, founded by practising doctors. Located in the heart of Kokapet.
+                A new generation of family hospital, founded by practising doctors. Located in the heart of Kokapet.
               </motion.p>
 
               <motion.div className="mt-6 sm:mt-8 flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-3.5" variants={fadeUp} initial="hidden" animate="visible">

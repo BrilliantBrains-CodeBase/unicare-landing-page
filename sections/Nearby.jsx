@@ -16,7 +16,7 @@ const specialties = [
 ];
 
 const trustPoints = [
-  'Experienced multi-speciality doctors',
+  'Experienced family & specialist doctors',
   'Modern diagnostics & patient-focused care',
   'Comfortable consultation experience',
   'Easy appointment coordination',
@@ -122,7 +122,7 @@ export default function Nearby() {
                   </span>
                   <div>
                     <div className="text-[13.5px] font-semibold">Narsingi, Kokapet, Hyderabad</div>
-                    <div className="text-[11px] text-white/50">Modern multi-speciality care, close to home</div>
+                    <div className="text-[11px] text-white/50">Modern family care, close to home</div>
                   </div>
                 </div>
               </div>

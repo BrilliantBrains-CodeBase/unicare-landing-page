@@ -161,9 +161,6 @@ export default function Facilities() {
                 onNext={nextPage}
                 onDot={setPage}
               />
-              <p className="text-[13.5px] leading-relaxed text-(--muted) max-w-105 text-right">
-                Plus 24/7 emergency, ICU, in-house pharmacy, and ambulance services - everything a Kokapet family needs, in one place.
-              </p>
             </div>
           </div>
 

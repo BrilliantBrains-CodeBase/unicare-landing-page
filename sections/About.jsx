@@ -61,7 +61,7 @@ export default function About() {
                 For too long, Kokapet families had two choices - a corporate hospital 15km away, or a clinic that couldn't handle anything serious.
               </p>
               <p className="mt-4 text-[14px] leading-relaxed text-(--muted)">
-                UniCare exists to end that compromise. A boutique multispecialty hospital with the warmth of a family doctor and the capability of a specialist centre.
+                UniCare exists to end that compromise. A boutique family hospital with the warmth of a family doctor and the capability of a specialist centre.
               </p>
             </div>
             <div className="mt-6 md:mt-8">
@@ -82,7 +82,7 @@ export default function About() {
               <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, rgba(1,34,87,.25) 0%, rgba(1,34,87,0) 40%, rgba(1,34,87,.55) 100%)' }}/>
               <div className="absolute left-4 top-4"><span className="chip">Kokapet, Hyderabad</span></div>
               <div className="absolute right-4 top-4 max-w-50 sm:max-w-70 text-right">
-                <div className="text-white text-[16px] sm:text-[20px] font-display leading-tight">A boutique multispecialty hospital, built for western Hyderabad</div>
+                <div className="text-white text-[16px] sm:text-[20px] font-display leading-tight">A boutique family hospital, built for western Hyderabad</div>
               </div>
               <div className="absolute left-4 bottom-4 flex items-center gap-2">
                 <span className="pill text-[12px] inline-flex items-center gap-1.5"><Pin s={12}/> Kokapet, Hyderabad</span>
