@@ -1,0 +1,218 @@
+@import "tailwindcss";
+
+/* ── Focus-visible: keyboard-only ring ── */
+:focus-visible {
+  outline: 3px solid var(--teal);
+  outline-offset: 2px;
+}
+
+/* Remove outline for mouse/touch users */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+:root {
+  --navy: #012257;
+  --navy-2: #021a44;
+  --teal: #2CAAA0;
+  --teal-2: #1f8a82;
+  --teal-soft: #E6F4F2;
+  --teal-tint: #D5ECE9;
+  --cream: #F4EFE7;
+  --bg: #F4F5F7;
+  --soft: #E9EDF2;
+  --line: rgba(1,34,87,0.12);
+  --muted: #5b6577;
+}
+
+html, body {
+  background: var(--bg);
+  color: var(--navy);
+  font-family: 'Open Sans', system-ui, sans-serif;
+}
+
+.font-display {
+  font-family: Georgia, 'Times New Roman', serif;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+}
+
+.pill {
+  border: 1px solid var(--line);
+  border-radius: 9999px;
+  padding: .55rem 1rem;
+  font-size: 13px;
+  background: #fff;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: border-color .18s ease, background .18s ease;
+}
+
+button.pill:hover {
+  border-color: rgba(1,34,87,0.3);
+  background: var(--soft);
+}
+
+.pill-ghost {
+  border: 1px solid rgba(255,255,255,.35);
+  color: #fff;
+  background: rgba(255,255,255,.12);
+  backdrop-filter: blur(8px);
+}
+
+.btn-dark {
+  background: var(--navy);
+  color: #fff;
+  border-radius: 9999px;
+  padding: .6rem 1rem .6rem 1.1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: .6rem;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background .18s ease, opacity .18s ease;
+}
+
+.btn-dark:hover {
+  background: var(--navy-2);
+}
+
+.btn-dark:active {
+  opacity: .85;
+}
+
+.btn-dark .arrow {
+  width: 28px;
+  height: 28px;
+  border-radius: 9999px;
+  background: #fff;
+  color: var(--navy);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.placeholder-photo {
+  position: relative;
+  overflow: hidden;
+}
+
+.placeholder-photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(135deg, rgba(255,255,255,.06) 0 1px, transparent 1px 18px);
+  pointer-events: none;
+}
+
+.mono {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  letter-spacing: .02em;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  font-size: 11px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: #fff;
+  background: rgba(255,255,255,.18);
+  border: 1px solid rgba(255,255,255,.3);
+  border-radius: 9999px;
+  padding: .35rem .7rem;
+  backdrop-filter: blur(6px);
+  white-space: nowrap;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 9999px;
+  background: currentColor;
+  display: inline-block;
+}
+
+.hover-lift {
+  transition: transform .25s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+}
+
+::selection {
+  background: #012257;
+  color: #fff;
+}
+
+.photo-hosp-1 {
+  background: linear-gradient(180deg,#0a3a7a 0%, #0b5e80 55%, #2CAAA0 100%);
+}
+
+.photo-hosp-2 {
+  background: linear-gradient(180deg,#2CAAA0 0%, #5fc4bb 60%, #cfeae6 100%);
+}
+
+.photo-hosp-3 {
+  background: linear-gradient(180deg,#012257 0%, #1a3a6e 55%, #2CAAA0 100%);
+}
+
+.hospital-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.vline {
+  height: 1px;
+  background: var(--line);
+}
+
+/* ── Map pin pulse ── */
+.pin-pulse {
+  position: absolute;
+  width: 56px;
+  height: 56px;
+  border-radius: 9999px;
+  border: 2px solid #2CAAA0;
+  animation: ping 2.4s ease-out infinite;
+}
+
+/* ── Shared animations ── */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@keyframes ping {
+  0%   { transform: translate(-50%, -50%) scale(.8); opacity: .6; }
+  70%  { transform: translate(-50%, -50%) scale(2);  opacity: 0;  }
+  100% { transform: translate(-50%, -50%) scale(.8); opacity: 0;  }
+}
+
+@keyframes kenBurns {
+  from { transform: scale(1); }
+  to   { transform: scale(1.06); }
+}
+
+.ken-burns {
+  animation: kenBurns 12s ease-in-out infinite alternate;
+  transform-origin: center center;
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+/* ── Respect reduced motion ── */
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track  { animation: none !important; }
+  .pin-pulse      { animation: none !important; }
+  .ken-burns      { animation: none !important; }
+  .hover-lift     { transition: none !important; }
+  * {
+    transition-duration: .01ms !important;
+    animation-duration:  .01ms !important;
+  }
+}
