@@ -8,6 +8,7 @@ import orthoImg from '../assets/ortho.png';
 import generalMedImg from '../assets/general-medicine.png';
 import surgeryImg from '../assets/surgery-ot.png';
 import pharmacyImg from '../assets/pharmacy.png';
+import labImg from '../assets/diagnostics.png';
 import { fadeUp, stagger, vp } from '../lib/animations';
 
 const facilitiesData = [
@@ -17,6 +18,7 @@ const facilitiesData = [
   { tag: 'General Medicine', title: 'Diabetes, BP, thyroid -\nthe family doctor, modernised', img: generalMedImg },
   { tag: 'General Surgery', title: 'Minimally invasive surgery\nwith personal accountability', img: surgeryImg },
   { tag: 'Pharmacy', title: 'In-house pharmacy,\neverything you need on-site', img: pharmacyImg },
+  { tag: 'Lab', title: 'In-house diagnostics &\nfast turnaround reports', img: labImg },
 ];
 
 const cardStagger = stagger(0.1, 0.1);
@@ -98,7 +100,7 @@ export default function Facilities() {
             <div className="flex items-start sm:items-center gap-3 flex-wrap">
               <span className="pill text-[12px]">What to Expect</span>
               <h2 className="font-display text-[22px] sm:text-[28px] md:text-[34px]" style={{ color: 'var(--navy)' }}>
-                Six specialties. One neighbourhood hospital.
+                Seven specialties. One neighbourhood hospital.
               </h2>
             </div>
             <button onClick={() => document.getElementById('notify-form')?.scrollIntoView({ behavior: 'smooth' })} className="btn-dark cursor-pointer">

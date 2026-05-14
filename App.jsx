@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import MedicalCursor from './components/MedicalCursor';
 import Hero from './sections/Hero';
 import About from './sections/About';
 import Discover from './sections/Discover';
@@ -27,6 +28,7 @@ function Home() {
 export default function App() {
   return (
     <BrowserRouter>
+      <MedicalCursor />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/thank-you" element={<ThankYou />} />

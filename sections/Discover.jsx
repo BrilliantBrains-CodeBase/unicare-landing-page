@@ -194,9 +194,9 @@ export default function Discover() {
               </button>
             </motion.div>
             <div className="flex-1">
-              <div className="font-display text-[28px] leading-none text-(--teal)">*</div>
+              <div className="font-display text-[20px] leading-none text-(--teal)">Integrated healthcare</div>
               <p className="text-[13px] sm:text-[14px] leading-relaxed text-(--muted) mt-2">
-                Founded by practising doctors - surgery, women's health, endocrinology, and paediatrics - all under one roof in Kokapet.
+                No more scattered reports or lost prescriptions. At UniCare, your entire health journey lives in one integrated app.
               </p>
             </div>
           </div>

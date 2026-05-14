@@ -1,6 +1,7 @@
 import { createPortal } from 'react-dom';
 import { useEffect, useRef, useState } from 'react';
 import { AnimatePresence, motion, useMotionTemplate, useReducedMotion, useScroll, useTransform } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { Arrow, Play, Menu } from '../components/icons';
 import Logo from '../components/Logo';
 import heroBg from '../assets/hospital-exterior-main.png';
@@ -49,6 +50,7 @@ export default function Hero() {
   const shellInset = useTransform(scrollYProgress, [0, 0.55], [16, 0]);
   const shellRadius = useTransform(scrollYProgress, [0, 0.55], [28, 0]);
   const shellClip = useMotionTemplate`inset(${shellInset}px round ${shellRadius}px)`;
+  const navClip   = useMotionTemplate`inset(${shellInset}px ${shellInset}px 0px round ${shellRadius}px)`;
   const foregroundScale = useTransform(scrollYProgress, [0, 0.6], [1, 1.08]);
   const foregroundY = useTransform(scrollYProgress, [0, 0.6], [10, 0]);
   const proofScale = useTransform(scrollYProgress, [0, 0.6], [0.96, 1]);
@@ -66,6 +68,61 @@ export default function Hero() {
     ? { width: 28, height: 28, minWidth: 28, minHeight: 28, borderRadius: '9999px', background: 'rgba(1,34,87,0.10)', color: '#012257', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, overflow: 'hidden', lineHeight: 0 }
     : undefined;
 
+  // Mobile sticky navbar — invisible at hero, fades in when pinned
+  const mobileNavbar = createPortal(
+    <div
+      className="lg:hidden fixed top-0 left-0 right-0 z-9999 px-4 pt-3 pb-2"
+      style={{
+        ...pinnedStyle,
+        opacity: pinned ? 1 : 0,
+        pointerEvents: pinned ? 'auto' : 'none',
+        transition: `${pinnedStyle.transition}, opacity 0.3s ease`,
+      }}
+    >
+      <div className="flex items-center justify-between">
+        <Link to="/"><Logo className="h-16 w-auto shrink-0" /></Link>
+        <button
+          onClick={() => setOpen(o => !o)}
+          aria-label={open ? 'Close menu' : 'Open menu'}
+          aria-expanded={open}
+          className="w-10 h-10 rounded-full flex items-center justify-center cursor-pointer"
+          style={{ background: 'rgba(1,34,87,0.08)' }}
+        >
+          <Menu s={16} c="#012257" />
+        </button>
+      </div>
+      <AnimatePresence>
+        {open && pinned && (
+          <motion.div
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
+            className="mt-2 rounded-2xl p-4 flex flex-col gap-1"
+            style={{ background: 'rgba(1,34,87,0.92)', backdropFilter: 'blur(16px)', WebkitBackdropFilter: 'blur(16px)' }}
+          >
+            {navLinks.map(({ label, id }) => (
+              <button
+                key={id}
+                onClick={() => { scrollTo(id); setOpen(false); }}
+                className="text-left text-[14px] font-medium py-2.5 px-3 rounded-xl text-white/90 hover:bg-white/10 transition-colors cursor-pointer"
+              >{label}</button>
+            ))}
+            <div className="my-2 h-px bg-white/15" />
+            <button
+              onClick={() => { scrollToForm(); setOpen(false); }}
+              className="btn-dark w-full justify-center cursor-pointer"
+            >
+              <span>Book an Appointment</span>
+              <span className="arrow"><Arrow s={12} /></span>
+            </button>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>,
+    document.body
+  );
+
   // Portal ensures the navbar is rendered directly under <body>, fully escaping
   // any CSS stacking contexts created by the hero's clipPath animation.
   const navbar = createPortal(
@@ -75,10 +132,10 @@ export default function Hero() {
         ? { ...(pinned ? pinnedStyle : glassStyle), top: 0, left: 0, right: 0 }
         : {
             ...(pinned ? pinnedStyle : glassStyle),
-            top: shellInset,
-            left: shellInset,
-            right: shellInset,
-            borderRadius: shellRadius,
+            top: 0,
+            left: 0,
+            right: 0,
+            clipPath: navClip,
           }
       }
       variants={prefersReducedMotion ? {} : navVariants}
@@ -87,7 +144,7 @@ export default function Hero() {
     >
       <div className="flex items-center gap-2 rounded-full px-3 py-0">
         <motion.div variants={fadeIn}>
-          <Logo className="h-32 w-auto shrink-0" />
+          <Link to="/"><Logo className="h-32 w-auto shrink-0" /></Link>
         </motion.div>
         <div className="flex-1" />
         <div className="flex items-center gap-0.5">
@@ -128,7 +185,7 @@ export default function Hero() {
 
           {/* Nav */}
           <div className="relative z-10 flex items-center justify-between px-4 pt-4">
-            <Logo className="h-16 w-auto" />
+            <Link to="/"><Logo className="h-16 w-auto" /></Link>
             <button
               onClick={() => setOpen(o => !o)}
               aria-label={open ? 'Close menu' : 'Open menu'}
@@ -207,7 +264,7 @@ export default function Hero() {
           {/* ── Animated shell (hero image + content) ── */}
           <motion.div
             className="relative h-full overflow-hidden"
-            style={prefersReducedMotion ? {} : { clipPath: shellClip }}
+            style={prefersReducedMotion ? {} : { clipPath: shellClip, willChange: 'clip-path' }}
           >
             {/* Background image */}
             <div className="absolute inset-0">
@@ -276,6 +333,7 @@ export default function Hero() {
 
         </div>
       </section>
+      {mobileNavbar}
       {navbar}
     </>
   );

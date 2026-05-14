@@ -13,6 +13,7 @@ const specialties = [
   "Maternity & Women's Health",
   'General Surgery',
   'Pharmacy',
+  'Lab',
 ];
 
 const trustPoints = [
