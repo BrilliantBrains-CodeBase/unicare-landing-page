@@ -66,7 +66,7 @@ export default function Discover() {
 
   return (
     <section id="founders" className="px-4 sm:px-6 py-12 border-t border-(--line) overflow-x-hidden scroll-mt-32 lg:scroll-mt-40" data-screen-label="03 Discover">
-      <div className="max-w-330 mx-auto grid grid-cols-12 gap-8 md:gap-12">
+      <div className="max-w-330 mx-auto grid grid-cols-12 gap-8 md:gap-12 overflow-hidden">
 
         {/* Left - doctor tabs + profile card */}
         <motion.div
@@ -193,7 +193,7 @@ export default function Discover() {
                 <Plus s={18} c="#fff"/>
               </button>
             </motion.div>
-            <div className="flex-1">
+            <div className="flex-1 min-w-0">
               <div className="font-display text-[20px] leading-none text-(--teal)">Integrated healthcare</div>
               <p className="text-[13px] sm:text-[14px] leading-relaxed text-(--muted) mt-2">
                 No more scattered reports or lost prescriptions. At UniCare, your entire health journey lives in one integrated app.

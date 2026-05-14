@@ -95,7 +95,6 @@ export default function About() {
             <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden h-65 sm:h-85 md:h-105">
               <HospitalPhoto src={receptionImg} alt="UniCare Hospital reception" />
               <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, rgba(1,34,87,.25) 0%, rgba(1,34,87,0) 40%, rgba(1,34,87,.55) 100%)' }}/>
-              <div className="absolute left-4 top-4"><span className="chip">Kokapet, Hyderabad</span></div>
               <div className="absolute right-4 top-4 max-w-50 sm:max-w-70 text-right">
                 <div className="text-white text-[16px] sm:text-[20px] font-display leading-tight">A boutique family hospital, built for western Hyderabad</div>
               </div>

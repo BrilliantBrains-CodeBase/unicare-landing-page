@@ -80,7 +80,7 @@ export default function Hero() {
       }}
     >
       <div className="flex items-center justify-between">
-        <Link to="/"><Logo className="h-16 w-auto shrink-0" /></Link>
+        <Link to="/"><Logo horizontal className="h-10 w-auto shrink-0" /></Link>
         <button
           onClick={() => setOpen(o => !o)}
           aria-label={open ? 'Close menu' : 'Open menu'}
@@ -142,9 +142,9 @@ export default function Hero() {
       initial="hidden"
       animate="visible"
     >
-      <div className="flex items-center gap-2 rounded-full px-3 py-0">
+      <div className="flex items-center gap-2 rounded-full px-3 py-4">
         <motion.div variants={fadeIn}>
-          <Link to="/"><Logo className="h-32 w-auto shrink-0" /></Link>
+          <Link to="/"><Logo horizontal className="h-18 w-auto shrink-0" /></Link>
         </motion.div>
         <div className="flex-1" />
         <div className="flex items-center gap-0.5">
@@ -185,7 +185,7 @@ export default function Hero() {
 
           {/* Nav */}
           <div className="relative z-10 flex items-center justify-between px-4 pt-4">
-            <Link to="/"><Logo className="h-16 w-auto" /></Link>
+            <Link to="/"><Logo horizontal className="h-10 w-auto" /></Link>
             <button
               onClick={() => setOpen(o => !o)}
               aria-label={open ? 'Close menu' : 'Open menu'}
@@ -227,9 +227,9 @@ export default function Hero() {
             )}
           </AnimatePresence>
 
-          {/* Content — pinned to bottom */}
+          {/* Content — vertically centered */}
           <motion.div
-            className="relative z-10 flex-1 flex flex-col justify-end px-5 pb-8"
+            className="relative z-10 flex-1 flex flex-col justify-center px-5 py-8"
             initial={{ opacity: 0, y: 22 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1], delay: 0.15 }}
@@ -263,7 +263,7 @@ export default function Hero() {
 
           {/* ── Animated shell (hero image + content) ── */}
           <motion.div
-            className="relative h-full overflow-hidden"
+            className="relative h-full overflow-hidden flex items-center"
             style={prefersReducedMotion ? {} : { clipPath: shellClip, willChange: 'clip-path' }}
           >
             {/* Background image */}
@@ -278,7 +278,7 @@ export default function Hero() {
 
             {/* Hero content */}
             <motion.div
-              className="relative z-10 mt-28 sm:mt-36 lg:mt-44 px-4 sm:px-6 lg:px-10 max-w-184"
+              className="relative z-10 px-4 sm:px-6 lg:px-10 max-w-184"
               style={prefersReducedMotion ? undefined : { scale: foregroundScale, y: foregroundY, transformOrigin: 'top left' }}
             >
               <motion.div className="chip mb-5 sm:mb-6 w-fit text-[12px] sm:text-[13px] px-3.5 py-2" variants={fadeUp} initial="hidden" animate="visible">
