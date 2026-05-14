@@ -286,10 +286,10 @@ export default function Hero() {
               </motion.div>
 
               <motion.h1
-                className="font-display text-white text-[48px] sm:text-[72px] lg:text-[96px] leading-[0.96] tracking-[-0.03em]"
+                className="font-display text-white text-[48px] sm:text-[72px] lg:text-[88px] leading-[0.96] tracking-[-0.03em]"
                 variants={fadeUp} initial="hidden" animate="visible"
               >
-                Expert Care,<br/>Close to{' '}<br className="sm:hidden"/>Home.
+                Expert Care,<br/>Close to Home.
               </motion.h1>
 
               <motion.p
