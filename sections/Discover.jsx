@@ -118,7 +118,7 @@ export default function Discover() {
                     </div>
                   </div>
                   <p className="text-[12px] text-(--muted) leading-relaxed">{doc.bio}</p>
-                  <button onClick={() => document.getElementById('notify-form')?.scrollIntoView({ behavior: 'smooth' })} className="btn-dark text-[11px] py-2">
+                  <button onClick={() => document.getElementById('notify-form')?.scrollIntoView({ behavior: 'smooth' })} className="btn-dark text-[11px] py-2 self-start">
                     <span>Book Appointment</span>
                     <span className="arrow w-6 h-6"><Arrow s={10}/></span>
                   </button>

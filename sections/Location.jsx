@@ -36,7 +36,7 @@ export default function Location() {
             Visit us in Kokapet.
           </motion.h2>
           <motion.p variants={fadeUp} className="text-[14px] sm:text-[15px] text-(--muted) mt-3 leading-relaxed max-w-130 px-2">
-            Serving Narsingi, Financial District, Gachibowli and Manikonda - the best care is never more than a few minutes away.
+            Serving Narsingi, Financial District, Gachibowli and Manikonda — the best care is never more than a few minutes away.
           </motion.p>
         </motion.div>
 
@@ -95,7 +95,7 @@ export default function Location() {
                   <Phone s={13} c="#012257"/> +91 9090546363
                 </a>
                 <a href="https://www.google.com/maps/place/Saanvi+Antalya+Homes/data=!4m2!3m1!1s0x0:0x2bd6417591e43792?sa=X&ved=1t:2428&ictx=111" target="_blank" rel="noopener noreferrer" className="w-full rounded-2xl px-4 py-3 text-[12px] inline-flex items-center justify-center gap-1.5 border border-white/20 text-white/80 hover:bg-white/5 transition-colors text-center leading-snug">
-                  2nd Floor, Saanvi Antalya Homes,<br/>Narsingi, Kokapet, Hyderabad · 500075
+                  A 201, 2nd Floor, Saanvi Antalya Homes,<br/>Adjacent to Allu Cinema, Kokapet<br/>Rangareddy District, Telangana
                 </a>
               </div>
 
@@ -170,8 +170,8 @@ export default function Location() {
                   </span>
                   <div className="text-left">
                     <div className="text-[11.5px] sm:text-[12.5px] font-semibold text-(--navy)">UniCare Hospital</div>
-                    <div className="text-[9.5px] sm:text-[10.5px] text-(--muted)">2nd Floor, Saanvi Antalya Homes, Narsingi</div>
-                    <div className="text-[9px] sm:text-[9.5px] text-(--muted)/70">Kokapet, Hyderabad · 500075</div>
+                    <div className="text-[9.5px] sm:text-[10.5px] text-(--muted)">A 201, 2nd Floor, Saanvi Antalya Homes</div>
+                    <div className="text-[9px] sm:text-[9.5px] text-(--muted)/70">Adjacent to Allu Cinema, Kokapet, Telangana</div>
                   </div>
                 </div>
               </div>
@@ -185,7 +185,7 @@ export default function Location() {
               {/* Bottom bar */}
               <div className="absolute z-20 left-3 sm:left-4 bottom-3 sm:bottom-4 right-3 sm:right-4 flex items-center justify-between gap-2 sm:gap-3 flex-wrap">
                 <span className="pill text-[11px] sm:text-[12px] inline-flex items-center gap-1.5 shadow-sm">
-                  <Pin s={11}/> Narsingi, Kokapet · 500075
+                  <Pin s={11}/> Kokapet, Rangareddy District
                 </span>
                 <a href="https://www.google.com/maps/place/Saanvi+Antalya+Homes/data=!4m2!3m1!1s0x0:0x2bd6417591e43792?sa=X&ved=1t:2428&ictx=111" target="_blank" rel="noopener noreferrer" className="btn-dark text-[11px] sm:text-[12px]">
                   <span>Get Directions</span>
