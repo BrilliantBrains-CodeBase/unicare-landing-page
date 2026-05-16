@@ -4,7 +4,7 @@ import { AnimatePresence, motion, useMotionTemplate, useReducedMotion, useScroll
 import { Link } from 'react-router-dom';
 import { Arrow, Play, Menu } from '../components/icons';
 import Logo from '../components/Logo';
-import heroBg from '../assets/hospital-exterior-main.png';
+import heroBg from '../assets/hospital-exterior-main.png?w=1920&format=webp&quality=78';
 import { fadeIn, fadeUp, stagger } from '../lib/animations';
 
 const navLinks = [
@@ -26,9 +26,7 @@ const glassStyle = {
 };
 
 const pinnedStyle = {
-  background: 'rgba(255,255,255,0.94)',
-  backdropFilter: 'blur(18px)',
-  WebkitBackdropFilter: 'blur(18px)',
+  background: 'rgba(255,255,255,0.97)',
   border: '1px solid rgba(1,34,87,0.10)',
   boxShadow: '0 18px 48px rgba(1,34,87,0.12)',
   transition: 'background 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease',
@@ -180,7 +178,7 @@ export default function Hero() {
         <div className="relative rounded-[24px] overflow-hidden flex flex-col" style={{ minHeight: '88dvh' }}>
 
           {/* Background */}
-          <img src={heroBg} alt="" className="absolute inset-0 w-full h-full object-cover ken-burns" />
+          <img src={heroBg} alt="" className="absolute inset-0 w-full h-full object-cover ken-burns" fetchpriority="high" decoding="async"/>
           <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg,rgba(1,34,87,.55) 0%,rgba(1,34,87,.05) 45%,rgba(1,34,87,.72) 100%)' }} />
 
           {/* Nav */}
@@ -272,6 +270,8 @@ export default function Hero() {
                 src={heroBg}
                 alt=""
                 className="absolute inset-0 w-full h-full object-cover ken-burns"
+                fetchpriority="high"
+                decoding="async"
               />
               <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, rgba(1,34,87,.55) 0%, rgba(1,34,87,.10) 40%, rgba(1,34,87,.55) 100%)' }}/>
             </div>

@@ -2,7 +2,7 @@ export default function HospitalPhoto({ src, alt = 'UniCare Hospital', label, va
   if (src) {
     return (
       <div className="relative w-full h-full">
-        <img src={src} alt={alt} className="absolute inset-0 w-full h-full object-cover"/>
+        <img src={src} alt={alt} className="absolute inset-0 w-full h-full object-cover" loading="lazy" decoding="async"/>
         {label && (
           <div className="absolute left-3 top-3 mono text-[10px] uppercase tracking-widest text-white/85 bg-black/30 backdrop-blur px-2 py-1 rounded-full">
             {label}

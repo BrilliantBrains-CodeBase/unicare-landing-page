@@ -2,13 +2,13 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Arrow, ArrowLeft, ArrowRight } from '../components/icons';
 import HospitalPhoto from '../components/HospitalPhoto';
-import maternityImg from '../assets/maternity.png';
-import pediatricImg from '../assets/pediatric.png';
-import orthoImg from '../assets/ortho.png';
-import generalMedImg from '../assets/general-medicine.png';
-import surgeryImg from '../assets/surgery-ot.png';
-import pharmacyImg from '../assets/pharmacy.png';
-import labImg from '../assets/diagnostics.png';
+import maternityImg  from '../assets/maternity.png?w=800&format=webp&quality=78';
+import pediatricImg  from '../assets/pediatric.png?w=800&format=webp&quality=78';
+import orthoImg      from '../assets/ortho.png?w=800&format=webp&quality=78';
+import generalMedImg from '../assets/general-medicine.png?w=800&format=webp&quality=78';
+import surgeryImg    from '../assets/surgery-ot.png?w=800&format=webp&quality=78';
+import pharmacyImg   from '../assets/pharmacy.png?w=800&format=webp&quality=78';
+import labImg        from '../assets/diagnostics.png?w=800&format=webp&quality=78';
 import { fadeUp, stagger, vp } from '../lib/animations';
 
 const facilitiesData = [

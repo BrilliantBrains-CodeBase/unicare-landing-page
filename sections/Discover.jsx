@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Arrow, ArrowLeft, ArrowRight, Plus, SunMark } from '../components/icons';
 import HospitalPhoto from '../components/HospitalPhoto';
-import interiorFooterImg from '../assets/hospital-interior-footer.png';
+import interiorFooterImg from '../assets/hospital-interior-footer.png?w=600&format=webp&quality=78';
 import { scaleIn, slideLeft, slideRight, vp } from '../lib/animations';
 
 const doctors = [
