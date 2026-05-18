@@ -95,7 +95,7 @@ export default function Location() {
                   <Phone s={13} c="#012257"/> +91 9090546363
                 </a>
                 <a href="https://www.google.com/maps/place/Saanvi+Antalya+Homes/data=!4m2!3m1!1s0x0:0x2bd6417591e43792?sa=X&ved=1t:2428&ictx=111" target="_blank" rel="noopener noreferrer" className="w-full rounded-2xl px-4 py-3 text-[12px] inline-flex items-center justify-center gap-1.5 border border-white/20 text-white/80 hover:bg-white/5 transition-colors text-center leading-snug">
-                  A 201, 2nd Floor, Saanvi Antalya Homes,<br/>Adjacent to Allu Cinema, Kokapet<br/>Rangareddy District, Telangana
+                  A 201, 2nd Floor, Saanvi Antalya Homes,<br/>Kokapet, Rangareddy District, Telangana
                 </a>
               </div>
 
@@ -171,7 +171,7 @@ export default function Location() {
                   <div className="text-left">
                     <div className="text-[11.5px] sm:text-[12.5px] font-semibold text-(--navy)">UniCare Hospital</div>
                     <div className="text-[9.5px] sm:text-[10.5px] text-(--muted)">A 201, 2nd Floor, Saanvi Antalya Homes</div>
-                    <div className="text-[9px] sm:text-[9.5px] text-(--muted)/70">Adjacent to Allu Cinema, Kokapet, Telangana</div>
+                    <div className="text-[9px] sm:text-[9.5px] text-(--muted)/70">Kokapet, Rangareddy District, Telangana</div>
                   </div>
                 </div>
               </div>
