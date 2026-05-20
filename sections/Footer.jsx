@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, Pin, InstaIc, XIc, FbIc, LinkedInIc } from '../components/icons';
 import { fadeUp, scaleIn, stagger, vp } from '../lib/animations';
+import Logo from '../components/Logo';
 
 const iconStagger = stagger(0.06, 0.1);
 
@@ -17,8 +18,9 @@ export default function Footer() {
           whileInView="visible"
           viewport={vp}
         >
+          <Logo className="h-16 w-auto mx-auto mb-5" />
           <p className="text-[13px] sm:text-[14px] text-(--muted) leading-relaxed">
-            UniCare Hospital - Expert Care, Close to Home. A boutique family hospital in Kokapet, Hyderabad. Founded by practising doctors.
+            Expert Care, Close to Home. A boutique family hospital in Kokapet, Hyderabad. Founded by practising doctors.
           </p>
           <div className="mt-5 sm:mt-6 flex items-center justify-center gap-2 flex-wrap">
             <a href="mailto:info@unicareglobalhospitals.com" className="pill text-[12px] sm:text-[12.5px] inline-flex items-center gap-1.5">info@unicareglobalhospitals.com <ArrowRight s={11}/></a>

@@ -2,8 +2,7 @@ import { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Arrow, ArrowLeft, ArrowRight, Pin } from '../components/icons';
 import HospitalPhoto from '../components/HospitalPhoto';
-import exteriorMainImg from '../assets/hospital-exterior-main.png?w=1200&format=webp&quality=78';
-import receptionImg    from '../assets/hospital-reception.png?w=1200&format=webp&quality=78';
+import receptionImg from '../assets/hospital-reception.png?w=1200&format=webp&quality=78';
 import { fadeUp, scaleIn, stagger, vp } from '../lib/animations';
 
 const headingStagger = stagger(0.1, 0);
