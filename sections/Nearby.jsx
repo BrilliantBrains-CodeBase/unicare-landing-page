@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { Arrow, Phone, Pin } from '../components/icons';
 import { fadeUp, slideLeft, slideRight, stagger, vp } from '../lib/animations';
 
-const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyda3Ii0IoqRFjYcxZZS-W5vsLmmOOs7ImPgmrGqjxrV9wCThKLtBpJtHBkJH_VMCKOWQ/exec';
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwGla8dr0IPmb5wKhYMHLgyh5-vxAZQOkXof6nMdXIf_UgRkc1aZDqxlzVYtuZQyvpm/exec';
 
 const specialties = [
   'General Medicine',
