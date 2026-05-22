@@ -208,7 +208,7 @@ export default function Discover() {
           <div className="mt-8 md:mt-16 flex items-start gap-5 sm:gap-6">
             <motion.div className="relative shrink-0" variants={scaleIn}>
               <div className="w-27.5 h-27.5 sm:w-35 sm:h-35 rounded-2xl overflow-hidden relative">
-                <HospitalPhoto src={interiorFooterImg} alt="UniCare Hospital interior" />
+                <HospitalPhoto src={interiorFooterImg} alt="UniCare Hospitals interior" />
               </div>
               <button onClick={() => document.getElementById('notify-form')?.scrollIntoView({ behavior: 'smooth' })} aria-label="See more about founders" className="absolute -bottom-3 -right-3 w-12 h-12 rounded-full bg-(--navy) text-white flex items-center justify-center cursor-pointer">
                 <Plus s={18} c="#fff"/>

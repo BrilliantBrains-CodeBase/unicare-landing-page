@@ -1,4 +1,4 @@
-export default function HospitalPhoto({ src, alt = 'UniCare Hospital', label, variant = 1 }) {
+export default function HospitalPhoto({ src, alt = 'UniCare Hospitals', label, variant = 1 }) {
   if (src) {
     return (
       <div className="relative w-full h-full">

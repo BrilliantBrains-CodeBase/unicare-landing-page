@@ -7,7 +7,7 @@ export default function Logo({ mono = false, transparent = false, horizontal = f
   return (
     <img
       src={src}
-      alt="UniCare Hospital"
+      alt="UniCare Hospitals"
       className={`${className} object-contain`}
       style={mono && !transparent && !horizontal ? { filter: 'brightness(0) invert(1)' } : undefined}
     />

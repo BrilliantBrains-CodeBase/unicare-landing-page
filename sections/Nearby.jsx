@@ -78,7 +78,7 @@ export default function Nearby() {
             Book an Appointment.
           </motion.h2>
           <motion.p variants={fadeUp} className="text-[14px] sm:text-[15px] text-(--muted) max-w-140 mt-4 leading-relaxed px-2">
-            Connect with experienced specialists at UniCare Hospital for consultations, diagnostics, and ongoing care - all in a calm, patient-first environment.
+            Connect with experienced specialists at UniCare Hospitals for consultations, diagnostics, and ongoing care - all in a calm, patient-first environment.
           </motion.p>
         </motion.div>
 

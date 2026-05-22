@@ -46,7 +46,7 @@ export default function ThankYou() {
               Request received.
             </h1>
             <p className="text-[15px] sm:text-[16px] text-(--muted) mt-4 leading-relaxed max-w-lg mx-auto">
-              Thank you for reaching out to UniCare Hospital. Our team will review your appointment request and call you to confirm a suitable time.
+              Thank you for reaching out to UniCare Hospitals. Our team will review your appointment request and call you to confirm a suitable time.
             </p>
           </motion.div>
 
@@ -114,7 +114,7 @@ export default function ThankYou() {
           <span className="text-[11px] sm:text-[12px] text-(--muted) inline-flex items-center gap-1.5">
             <Pin s={11}/> Kokapet, Hyderabad · 500075
           </span>
-          <span className="text-[11px] sm:text-[12px] text-(--muted)">© 2026 UniCare Hospital. All rights reserved.</span>
+          <span className="text-[11px] sm:text-[12px] text-(--muted)">© 2026 UniCare Hospitals. All rights reserved.</span>
         </div>
       </footer>
 
