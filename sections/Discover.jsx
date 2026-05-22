@@ -4,6 +4,10 @@ import { Arrow, ArrowLeft, ArrowRight, Plus, SunMark } from '../components/icons
 import HospitalPhoto from '../components/HospitalPhoto';
 import interiorFooterImg from '../assets/hospital-interior-footer.png?w=600&format=webp&quality=78';
 import { scaleIn, slideLeft, slideRight, vp } from '../lib/animations';
+import drVarunaImg from '../assets/Dr.Varuna.png';
+import drDeepakImg from '../assets/Dr.Deepak.png';
+import drNitinImg from '../assets/Dr.Nitin.png';
+import drVeenaImg from '../assets/Dr.Veena.png';
 
 const doctors = [
   {
@@ -13,6 +17,7 @@ const doctors = [
     specialty: "Women's Health & Reproductive Care",
     quals: ['MBBS', 'DGO', 'DNB', 'FRM'],
     initials: 'VV',
+    image: drVarunaImg,
     color: '#2CAAA0',
     bio: "8+ years across govt. & private healthcare. High-risk obstetrics, reproductive medicine, and minimally invasive gynaecological surgery. Builds lifecycle-based women's care.",
   },
@@ -23,6 +28,7 @@ const doctors = [
     specialty: 'General & Minimal Access Surgery',
     quals: ['MBBS', 'MS', 'FIAGES', 'FMAS'],
     initials: 'BV',
+    image: null,
     color: '#012257',
     bio: "Fellowship-trained laparoscopic surgeon, former Asst. Professor at Kasturba Medical College. Peer-reviewed publications; contributor to SRB's Surgical Textbooks.",
   },
@@ -33,6 +39,7 @@ const doctors = [
     specialty: 'Endocrinology & Metabolic Medicine',
     quals: ['MBBS', 'MD', 'DM (pursuing)', 'SCE UK'],
     initials: 'DT',
+    image: drDeepakImg,
     color: '#1A6B65',
     bio: 'UK-certified (SCE), published in Clinical Endocrinology. Expertise in diabetes, thyroid, pituitary and reproductive endocrinology with a research-driven practice.',
   },
@@ -43,6 +50,7 @@ const doctors = [
     specialty: 'Paediatrics & Neonatal Care',
     quals: ['MBBS', 'MD Paediatrics'],
     initials: 'NR',
+    image: drNitinImg,
     color: '#0A3D62',
     bio: 'NICU/PICU specialist trained at JJM Medical College. Managed 4,000+ neonatal cases. Skills: ventilation, resuscitation, developmental & preventive paediatrics.',
   },
@@ -53,6 +61,7 @@ const doctors = [
     specialty: 'Paediatrics & Neonatal Care',
     quals: ['MBBS', 'MD Paediatrics'],
     initials: 'MV',
+    image: drVeenaImg,
     color: '#6B3FA0',
     bio: 'Trained at KIMS Bangalore. Thesis on neonatal airway management in preterm infants. NICU/PICU with BLS & PALS certification.',
   },
@@ -102,11 +111,17 @@ export default function Discover() {
                 <div className="flex flex-col gap-4 sm:hidden">
                   <div className="flex items-center gap-3.5">
                     <div
-                      className="w-14 h-14 rounded-2xl flex items-center justify-center shrink-0 relative overflow-hidden"
+                      className="w-14 h-14 rounded-2xl shrink-0 relative overflow-hidden"
                       style={{ background: doc.color }}
                     >
-                      <div className="absolute inset-0" style={{ background: 'radial-gradient(circle at 70% 25%, rgba(255,255,255,0.15), transparent 65%)' }}/>
-                      <div className="font-display text-[22px] text-white leading-none z-10">{doc.initials}</div>
+                      {doc.image ? (
+                        <img src={doc.image} alt={doc.name} className="w-full h-full object-cover object-top" />
+                      ) : (
+                        <>
+                          <div className="absolute inset-0" style={{ background: 'radial-gradient(circle at 70% 25%, rgba(255,255,255,0.15), transparent 65%)' }}/>
+                          <div className="font-display text-[22px] text-white leading-none z-10 flex items-center justify-center h-full">{doc.initials}</div>
+                        </>
+                      )}
                     </div>
                     <div className="flex-1 min-w-0">
                       <div
@@ -128,11 +143,17 @@ export default function Discover() {
                 <div className="hidden sm:grid sm:grid-cols-12 gap-4 items-start">
                   <div className="sm:col-span-5">
                     <div
-                      className="rounded-2xl sm:aspect-auto sm:h-50 md:h-65 flex flex-col items-center justify-center gap-2 relative overflow-hidden"
+                      className="rounded-2xl sm:aspect-auto sm:h-50 md:h-65 relative overflow-hidden"
                       style={{ background: doc.color }}
                     >
-                      <div className="absolute inset-0" style={{ background: 'radial-gradient(circle at 70% 25%, rgba(255,255,255,0.15), transparent 65%)' }}/>
-                      <div className="font-display text-[60px] text-white leading-none z-10 tracking-tight">{doc.initials}</div>
+                      {doc.image ? (
+                        <img src={doc.image} alt={doc.name} className="w-full h-full object-cover object-top" />
+                      ) : (
+                        <>
+                          <div className="absolute inset-0" style={{ background: 'radial-gradient(circle at 70% 25%, rgba(255,255,255,0.15), transparent 65%)' }}/>
+                          <div className="font-display text-[60px] text-white leading-none z-10 tracking-tight flex items-center justify-center h-full">{doc.initials}</div>
+                        </>
+                      )}
                     </div>
                   </div>
                   <div className="sm:col-span-7 pt-1">
@@ -187,7 +208,7 @@ export default function Discover() {
           <div className="mt-8 md:mt-16 flex items-start gap-5 sm:gap-6">
             <motion.div className="relative shrink-0" variants={scaleIn}>
               <div className="w-27.5 h-27.5 sm:w-35 sm:h-35 rounded-2xl overflow-hidden relative">
-                <HospitalPhoto src={interiorFooterImg} alt="UniCare Hospital interior" />
+                <HospitalPhoto src={interiorFooterImg} alt="UniCare Hospitals interior" />
               </div>
               <button onClick={() => document.getElementById('notify-form')?.scrollIntoView({ behavior: 'smooth' })} aria-label="See more about founders" className="absolute -bottom-3 -right-3 w-12 h-12 rounded-full bg-(--navy) text-white flex items-center justify-center cursor-pointer">
                 <Plus s={18} c="#fff"/>

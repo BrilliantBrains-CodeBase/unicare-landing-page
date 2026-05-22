@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import MedicalCursor from './components/MedicalCursor';
+import MobileBottomBar from './components/MobileBottomBar';
 import Hero from './sections/Hero';
 import About from './sections/About';
 import Discover from './sections/Discover';
@@ -12,7 +13,7 @@ import ThankYou from './pages/ThankYou';
 function Home() {
   return (
     <>
-      <main className="min-h-screen pb-4">
+      <main className="min-h-screen pb-28 lg:pb-4">
         <Hero/>
         <About/>
         <Discover/>
@@ -21,6 +22,7 @@ function Home() {
         <Location/>
         <Footer/>
       </main>
+      <MobileBottomBar />
     </>
   );
 }

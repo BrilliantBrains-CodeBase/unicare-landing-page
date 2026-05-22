@@ -92,7 +92,7 @@ export default function About() {
             viewport={vp}
           >
             <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden h-65 sm:h-85 md:h-105">
-              <HospitalPhoto src={receptionImg} alt="UniCare Hospital reception" />
+              <HospitalPhoto src={receptionImg} alt="UniCare Hospitals reception" />
               <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, rgba(1,34,87,.25) 0%, rgba(1,34,87,0) 40%, rgba(1,34,87,.55) 100%)' }}/>
               <div className="absolute right-4 top-4 max-w-50 sm:max-w-70 text-right">
                 <div className="text-white text-[16px] sm:text-[20px] font-display leading-tight">A boutique family hospital, built for western Hyderabad</div>
@@ -228,7 +228,7 @@ export default function About() {
 
             <div className="mt-5 flex items-start justify-between gap-4">
               <p className="text-[13.5px] leading-relaxed text-(--muted) max-w-65">
-                <span className="font-semibold text-(--navy)">{area.name}</span> · {area.time} from UniCare Hospital, Kokapet
+                <span className="font-semibold text-(--navy)">{area.name}</span> · {area.time} from UniCare Hospitals, Kokapet
               </p>
               <div className="flex gap-2 shrink-0">
                 <button onClick={prevArea} aria-label="Previous area" className="w-10 h-10 rounded-full border border-(--line) flex items-center justify-center text-(--navy) cursor-pointer"><ArrowLeft s={14} c="#012257"/></button>

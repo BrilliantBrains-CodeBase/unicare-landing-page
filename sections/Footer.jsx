@@ -40,7 +40,7 @@ export default function Footer() {
                 className="font-display leading-[0.9] tracking-[-0.04em] shrink-0 pr-16"
                 style={{ color: 'var(--navy)', fontSize: 'clamp(48px, 10vw, 160px)', fontWeight: 700 }}
               >
-                UNICARE HOSPITAL
+                UNICARE HOSPITALS
               </span>
             ))}
           </div>
@@ -80,7 +80,7 @@ export default function Footer() {
             whileInView="visible"
             viewport={vp}
           >
-            © 2026 UniCare Hospital. All rights reserved.
+            © 2026 UniCare Hospitals. All rights reserved.
           </motion.div>
         </div>
 
