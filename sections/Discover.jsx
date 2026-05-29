@@ -5,6 +5,7 @@ import HospitalPhoto from '../components/HospitalPhoto';
 import interiorFooterImg from '../assets/hospital-interior-footer.png?w=600&format=webp&quality=78';
 import { scaleIn, slideLeft, slideRight, vp } from '../lib/animations';
 import drVarunaImg from '../assets/Dr.Varuna.png';
+import drBhargavaImg from '../assets/Dr.Bhargava.png';
 import drDeepakImg from '../assets/Dr.Deepak.png';
 import drNitinImg from '../assets/Dr.Nitin.png';
 import drVeenaImg from '../assets/Dr.Veena.png';
@@ -28,7 +29,7 @@ const doctors = [
     specialty: 'General & Minimal Access Surgery',
     quals: ['MBBS', 'MS', 'FIAGES', 'FMAS'],
     initials: 'BV',
-    image: null,
+    image: drBhargavaImg,
     color: '#012257',
     bio: "Fellowship-trained laparoscopic surgeon, former Asst. Professor at Kasturba Medical College. Peer-reviewed publications; contributor to SRB's Surgical Textbooks.",
   },

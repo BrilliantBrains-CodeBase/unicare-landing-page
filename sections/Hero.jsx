@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom';
 import { Arrow } from '../components/icons';
 import Logo from '../components/Logo';
 import heroBg from '../assets/hospital-exterior-main.png?w=1920&format=webp&quality=78';
+import drVarunaImg from '../assets/Dr.Varuna.png';
+import drBhargavaImg from '../assets/Dr.Bhargava.png';
 import { fadeIn, fadeUp, stagger } from '../lib/animations';
 
 const navLinks = [
@@ -233,12 +235,9 @@ export default function Hero() {
               style={prefersReducedMotion ? { opacity: 1 } : { opacity: 1, scale: proofScale, y: proofY, transformOrigin: 'bottom right' }}
             >
               <div className="flex -space-x-3 mb-3">
-                {[1, 2, 3].map(i => (
-                  <div key={i} className="w-11 h-11 rounded-full border-2 border-white overflow-hidden" style={{ background: `hsl(${190 + i * 15} 30% ${60 + i * 4}%)` }}>
-                    <svg viewBox="0 0 40 40" className="w-full h-full" aria-hidden="true">
-                      <circle cx="20" cy="16" r="7" fill="#fff" opacity=".9"/>
-                      <path d="M6 38c2-8 10-10 14-10s12 2 14 10" fill="#fff" opacity=".9"/>
-                    </svg>
+                {[drVarunaImg, drBhargavaImg].map((src, i) => (
+                  <div key={i} className="w-11 h-11 rounded-full border-2 border-white overflow-hidden">
+                    <img src={src} alt="" className="w-full h-full object-cover object-top" />
                   </div>
                 ))}
               </div>
