@@ -94,7 +94,7 @@ export default function Location() {
                 <a href="tel:+919090546363" className="w-full bg-white text-(--navy) rounded-2xl px-4 py-3 text-[13px] font-semibold inline-flex items-center justify-center gap-2 cursor-pointer">
                   <Phone s={13} c="#012257"/> +91 9090546363
                 </a>
-                <a href="https://www.google.com/maps/place/Saanvi+Antalya+Homes/data=!4m2!3m1!1s0x0:0x2bd6417591e43792?sa=X&ved=1t:2428&ictx=111" target="_blank" rel="noopener noreferrer" className="w-full rounded-2xl px-4 py-3 text-[12px] inline-flex items-center justify-center gap-1.5 border border-white/20 text-white/80 hover:bg-white/5 transition-colors text-center leading-snug">
+                <a href="https://www.google.com/maps/place/UniCare+Hospitals/@17.390425,78.3436576,21z/data=!4m14!1m7!3m6!1s0x3bcb95005da665df:0x2bd6417591e43792!2sSaanvi+Antalya+Homes!8m2!3d17.3904212!4d78.3436241!16s%2Fg%2F11vyrdgvv5!3m5!1s0x3bcb91dc874272cd:0xbc4ad3918afe8fcb!8m2!3d17.3902459!4d78.3437231!16s%2Fg%2F11zb6wm04j?entry=ttu&g_ep=EgoyMDI2MDYwMS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" className="w-full rounded-2xl px-4 py-3 text-[12px] inline-flex items-center justify-center gap-1.5 border border-white/20 text-white/80 hover:bg-white/5 transition-colors text-center leading-snug">
                   A 201, 2nd Floor, Saanvi Antalya Homes,<br/>Kokapet, Telangana
                 </a>
               </div>
@@ -187,7 +187,7 @@ export default function Location() {
                 <span className="pill text-[11px] sm:text-[12px] inline-flex items-center gap-1.5 shadow-sm">
                   <Pin s={11}/> Kokapet
                 </span>
-                <a href="https://www.google.com/maps/place/Saanvi+Antalya+Homes/data=!4m2!3m1!1s0x0:0x2bd6417591e43792?sa=X&ved=1t:2428&ictx=111" target="_blank" rel="noopener noreferrer" className="btn-dark text-[11px] sm:text-[12px]">
+                <a href="https://www.google.com/maps/place/UniCare+Hospitals/@17.390425,78.3436576,21z/data=!4m14!1m7!3m6!1s0x3bcb95005da665df:0x2bd6417591e43792!2sSaanvi+Antalya+Homes!8m2!3d17.3904212!4d78.3436241!16s%2Fg%2F11vyrdgvv5!3m5!1s0x3bcb91dc874272cd:0xbc4ad3918afe8fcb!8m2!3d17.3902459!4d78.3437231!16s%2Fg%2F11zb6wm04j?entry=ttu&g_ep=EgoyMDI2MDYwMS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" className="btn-dark text-[11px] sm:text-[12px]">
                   <span>Get Directions</span>
                   <span className="arrow"><Arrow s={11}/></span>
                 </a>

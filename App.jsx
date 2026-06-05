@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import MedicalCursor from './components/MedicalCursor';
 import MobileBottomBar from './components/MobileBottomBar';
+import { WhatsAppIc } from './components/icons';
 import Hero from './sections/Hero';
 import About from './sections/About';
 import Discover from './sections/Discover';
@@ -23,6 +24,20 @@ function Home() {
         <Footer/>
       </main>
       <MobileBottomBar />
+      {/* Desktop floating WhatsApp button */}
+      <a
+        href="https://wa.me/919090546363"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Chat on WhatsApp"
+        className="hidden lg:flex fixed bottom-8 right-8 z-9998 w-14 h-14 rounded-full items-center justify-center"
+        style={{
+          background: '#25D366',
+          boxShadow: '0 4px 20px rgba(37,211,102,0.45)',
+        }}
+      >
+        <WhatsAppIc s={28} c="#fff" />
+      </a>
     </>
   );
 }
