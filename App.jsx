@@ -2,6 +2,9 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import MedicalCursor from './components/MedicalCursor';
 import MobileBottomBar from './components/MobileBottomBar';
 import { WhatsAppIc } from './components/icons';
+
+const whatsappMsg = encodeURIComponent('Hello, thank you for contacting UniCare Hospitals, Kokapet, Hyderabad. How can we help you today – appointment or health enquiry?');
+const whatsappUrl = `https://wa.me/919090546363?text=${whatsappMsg}`;
 import Hero from './sections/Hero';
 import About from './sections/About';
 import Discover from './sections/Discover';
@@ -26,7 +29,7 @@ function Home() {
       <MobileBottomBar />
       {/* Desktop floating WhatsApp button */}
       <a
-        href="https://wa.me/919090546363"
+        href={whatsappUrl}
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Chat on WhatsApp"

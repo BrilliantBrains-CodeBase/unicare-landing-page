@@ -3,6 +3,9 @@ import { Arrow, Phone, WhatsAppIc } from './icons';
 
 const scrollTo = id => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
 
+const whatsappMsg = encodeURIComponent('Hello, thank you for contacting UniCare Hospitals, Kokapet, Hyderabad. How can we help you today – appointment or health enquiry?');
+const whatsappUrl = `https://wa.me/919090546363?text=${whatsappMsg}`;
+
 const HomeIc = () => (
   <svg width={20} height={20} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
     <path d="M3 12L12 4l9 8"/>
@@ -67,7 +70,7 @@ export default function MobileBottomBar() {
 
         {/* WhatsApp */}
         <a
-          href="https://wa.me/919090546363"
+          href={whatsappUrl}
           target="_blank"
           rel="noopener noreferrer"
           className="flex flex-col items-center gap-1 px-3 py-1 text-(--navy) opacity-70 hover:opacity-100 transition-opacity"
