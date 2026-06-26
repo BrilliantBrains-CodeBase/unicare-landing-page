@@ -50,13 +50,14 @@ export default function Footer() {
 
         <div className="pt-5 sm:pt-6 flex items-center justify-between gap-4 flex-wrap">
           <motion.div
-            className="flex items-center gap-2 text-[12px] sm:text-[13px] text-(--navy)"
+            className="flex flex-col gap-0.5 text-[11px] sm:text-[12px] text-(--muted)"
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
             viewport={vp}
           >
-            <Pin s={14}/> Kokapet, Hyderabad
+            <span className="font-semibold text-(--navy) text-[11px] sm:text-[12px] tracking-wide">VAARAHISHAKTI AROGYA PRIVATE LIMITED</span>
+            <span className="flex items-start gap-1.5"><Pin s={12} className="mt-[1px] shrink-0"/> Villa No. MP-6, Don Bosco Nagar, Suncity, Rajendra Nagar, Hyderabad, Rangareddy, Telangana – 500086</span>
           </motion.div>
 
           {/* Social icons - staggered scale-in */}
@@ -67,7 +68,7 @@ export default function Footer() {
             whileInView="visible"
             viewport={vp}
           >
-            <motion.a variants={scaleIn} href="https://www.instagram.com/unicarehospital_/" target="_blank" rel="noopener noreferrer" aria-label="UniCare on Instagram" className="w-9 h-9 rounded-full border border-(--line) flex items-center justify-center text-(--navy)"><InstaIc s={14} c="#012257"/></motion.a>
+            <motion.a variants={scaleIn} href="https://www.instagram.com/unicarehospitals/" target="_blank" rel="noopener noreferrer" aria-label="UniCare on Instagram" className="w-9 h-9 rounded-full border border-(--line) flex items-center justify-center text-(--navy)"><InstaIc s={14} c="#012257"/></motion.a>
             <motion.a variants={scaleIn} href="https://x.com/unicarehyd" target="_blank" rel="noopener noreferrer" aria-label="UniCare on X" className="w-9 h-9 rounded-full border border-(--line) flex items-center justify-center text-(--navy)"><XIc s={13} c="#012257"/></motion.a>
             <motion.a variants={scaleIn} href="https://www.facebook.com/profile.php?id=61589321121365" target="_blank" rel="noopener noreferrer" aria-label="UniCare on Facebook" className="w-9 h-9 rounded-full border border-(--line) flex items-center justify-center text-(--navy)"><FbIc s={14} c="#012257"/></motion.a>
             <motion.a variants={scaleIn} href="https://linkedin.com/company/unicare-hospital-hyd/" target="_blank" rel="noopener noreferrer" aria-label="UniCare on LinkedIn" className="w-9 h-9 rounded-full border border-(--line) flex items-center justify-center text-(--navy)"><LinkedInIc s={14} c="#012257"/></motion.a>
