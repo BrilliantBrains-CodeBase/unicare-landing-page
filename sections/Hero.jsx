@@ -4,7 +4,7 @@ import { motion, useMotionTemplate, useReducedMotion, useScroll, useTransform } 
 import { Link } from 'react-router-dom';
 import { Arrow } from '../components/icons';
 import Logo from '../components/Logo';
-import heroBg from '../assets/hospital-exterior-main.png?w=1920&format=webp&quality=78';
+import heroBg from '../assets/hero-bg.png?w=1920&format=webp&quality=78';
 import drVarunaImg from '../assets/Dr.Varuna.png';
 import drBhargavaImg from '../assets/Dr.Bhargava.png';
 import { fadeIn, fadeUp, stagger } from '../lib/animations';
