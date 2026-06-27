@@ -57,6 +57,7 @@ export default function Footer() {
             viewport={vp}
           >
             <span className="font-semibold text-(--navy) text-[11px] sm:text-[12px] tracking-wide">VAARAHISHAKTI AROGYA PRIVATE LIMITED</span>
+            <span className="flex items-start gap-1.5">GST: 36AALCV9973H1ZH</span>
             <span className="flex items-start gap-1.5"><Pin s={12} className="mt-[1px] shrink-0"/> Villa No. MP-6, Don Bosco Nagar, Suncity, Rajendra Nagar, Hyderabad, Rangareddy, Telangana – 500086</span>
           </motion.div>
 
